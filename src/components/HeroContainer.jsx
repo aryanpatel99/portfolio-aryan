@@ -20,7 +20,7 @@ const HeroContainer = () => {
                                     </div>
                                     <div class="top-7 bg-neutral-400/60 dark:bg-neutral-600 mt-1 w-full h-[0.9px]"></div>
                                 </div>
-                                <img src="https://phoneky.co.uk/thumbs/wallpapers/2022/p2/abstract/44/rca5c859.jpg" className='w-full h-full object-cover' alt="" />
+                                <img src={'/map-img.jpg'} className='w-full h-full object-cover' alt="map-img" />
                             </div>
                             {/* right */}
                            <div className='relative col-span-1 row-span-1 bg-[#1E1E1E] shadow-xl border border-neutral-600 rounded-lg sm:h-40'>
