@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const RightContainer = () => {
   return (
@@ -8,9 +9,9 @@ const RightContainer = () => {
         <div className='z-20 absolute p-2 w-full'>
           <div className='flex justify-between items-center'>
             <p className='text-white text-xs'>Experience & Education</p>
-            <a href={'/'}>
+            <Link to={'/experience'}>
               <i class="ri-external-link-line"></i>
-            </a>
+            </Link>
           </div>
           <div class="top-7 bg-neutral-600 mt-1 w-full h-[0.9px]"></div>
         </div>
