@@ -9,7 +9,7 @@ const RightContainer = () => {
         <div className='z-20 absolute p-2 w-full'>
           <div className='flex justify-between items-center'>
             <p className='text-white text-xs'>Experience & Education</p>
-            <Link to={'/experience'}>
+            <Link onClick={()=> window.scrollTo(0, 0)} to={'/experience'}>
               <i class="ri-external-link-line"></i>
             </Link>
           </div>

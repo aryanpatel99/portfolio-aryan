@@ -189,7 +189,7 @@ const HeroLowerBlock = () => {
             <div className='bottom-[0px] z-10 absolute bg-gradient-to-t from-[#1E1E1E] via-[#1e1e1eef] to-transparent w-[99%] h-32 transition-all translate-x-1 duration-200 ease-in'></div>
 
             <div>
-                <Link to={'/projects'} className="bottom-[20px] left-1/2 z-[11] absolute flex justify-center items-center gap-1 bg-neutral-700/40 p-1 px-2 border rounded-full text-white text-xs -translate-x-1/2">
+                <Link onClick={()=> window.scrollTo(0, 0)} to={'/projects'} className="bottom-[20px] left-1/2 z-[11] absolute flex justify-center items-center gap-1 bg-neutral-700/40 p-1 px-2 border rounded-full text-white text-xs -translate-x-1/2">
                     Show More
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
                 </Link>
