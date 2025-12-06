@@ -9,7 +9,7 @@ const RightContainer = () => {
         <div className='z-20 absolute p-2 w-full'>
           <div className='flex justify-between items-center'>
             <p className='text-white text-xs'>Experience & Education</p>
-            <Link onClick={()=> window.scrollTo(0, 0)} to={'/experience'}>
+            <Link onClick={() => window.scrollTo(0, 0)} to={'/experience'}>
               <i class="ri-external-link-line"></i>
             </Link>
           </div>
@@ -17,7 +17,34 @@ const RightContainer = () => {
         </div>
         <div className='relative flex flex-col gap-5 h-[240px] overflow-hidden overflow-y-auto scroll-smooth scrollbar-hide pb-12'>
           <div className='mt-8'></div>
+
           <div className='flex justify-between items-center px-2'>
+            <div className='flex items-center gap-2'>
+              <div className='flex justify-center items-center size-[40px]'>
+                <img src="" width={40} height={40} alt="" />
+              </div>
+              <div className='flex flex-col'>
+                <h1 className='font-medium text-sm text-white'>Credohire</h1>
+                <h1 className='font-normal text-xs text-zinc-300'>QA and CSM - Intern - March 2025 - July 2025</h1>
+              </div>
+            </div>
+          </div>
+
+
+          <div className='flex justify-between items-center px-2'>
+            <div className='flex items-center gap-2'>
+              <div className='flex justify-center items-center size-[40px]'>
+                <img src="" width={40} height={40} alt="" />
+              </div>
+              <div className='flex flex-col'>
+                <h1 className='font-medium text-sm text-white'>Newton School Of Technology X RU</h1>
+                <h1 className='font-normal text-zinc-300 text-xs'>Student - 2024 - Present</h1>
+              </div>
+            </div>
+          </div>
+
+
+          {/* <div className='flex justify-between items-center px-2'>
             <div className='flex items-center gap-2'>
               <div className='flex justify-center items-center size-[40px]'>
                 <img src="" width={40} height={40} alt="" />
@@ -27,8 +54,10 @@ const RightContainer = () => {
                 <h1 className='font-normal text-xs text-white'>QA and CSM - Intern - March 2025 - July 2025</h1>
               </div>
             </div>
-          </div>
-          <div className='flex justify-between items-center px-2'>
+          </div> */}
+
+
+          {/* <div className='flex justify-between items-center px-2'>
             <div className='flex items-center gap-2'>
               <div className='flex justify-center items-center size-[40px]'>
                 <img src="" width={40} height={40} alt="" />
@@ -38,30 +67,12 @@ const RightContainer = () => {
                 <h1 className='font-normal text-xs text-white'>QA and CSM - Intern - March 2025 - July 2025</h1>
               </div>
             </div>
-          </div>
-          <div className='flex justify-between items-center px-2'>
-            <div className='flex items-center gap-2'>
-              <div className='flex justify-center items-center size-[40px]'>
-                <img src="" width={40} height={40} alt="" />
-              </div>
-              <div className='flex flex-col'>
-                <h1 className='font-medium text-sm text-white'>Credohire</h1>
-                <h1 className='font-normal text-xs text-white'>QA and CSM - Intern - March 2025 - July 2025</h1>
-              </div>
-            </div>
-          </div>
-          <div className='flex justify-between items-center px-2'>
-            <div className='flex items-center gap-2'>
-              <div className='flex justify-center items-center size-[40px]'>
-                <img src="" width={40} height={40} alt="" />
-              </div>
-              <div className='flex flex-col'>
-                <h1 className='font-medium text-sm text-white'>Credohire</h1>
-                <h1 className='font-normal text-xs text-white'>QA and CSM - Intern - March 2025 - July 2025</h1>
-              </div>
-            </div>
-          </div>
+          </div> */}
+
+
         </div>
+
+
         {/* for the top gradient */}
         <div className="absolute top-0 z-10 bg-gradient-to-b from-[#1E1E1E] via-[#1E1E1E] to-transparent w-full h-12"></div>
         {/* for the bottom gradient */}
@@ -89,9 +100,9 @@ const RightContainer = () => {
             <div class="top-7 bg-neutral-400 mt-1 w-full h-[0.4px]"></div>
           </div>
           <div className='flex justify-center items-center mt-11 px-3 pb-3 h-[calc(100%-2.75rem)]'>
-            <a class="flex justify-center items-center space-x-2 bg-neutral-700 hover:bg-neutral-600 px-4 py-2 rounded-lg font-normal text-neutral-200 text-sm transition duration-300 ease-in-out animate-pulse" href="https://drive.google.com/file/d/1ZKe44J2gse6HZE70K2wfOdQ3Dq7O0D1Q/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-eye text-white"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
-            <span>View CV</span>
+            <a class="flex justify-center items-center space-x-2 bg-neutral-700 hover:bg-neutral-600 px-4 py-2 rounded-lg font-normal text-neutral-200 text-sm transition duration-300 ease-in-out animate-pulse" href="https://drive.google.com/file/d/1YA0VfhhyEnwKaE_tvUp75gVxjSHgKScD/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-eye text-white"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              <span>View CV</span>
             </a>
           </div>
         </div>
