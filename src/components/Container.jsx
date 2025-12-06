@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from './Navbar'
 import HeroContainer from './HeroContainer'
-import MainHeroContainer from './mainHeroContainer'
+import MainHeroContainer from './MainHeroContainer'
+
 
 const Container = () => {
   return (
