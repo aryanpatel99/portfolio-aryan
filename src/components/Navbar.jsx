@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { ModeToggle } from './mode-toggle'
 const Navbar = () => {
   return (
-    <div className='max-w-3xl mx-auto flex justify-between items-center py-4 border-b border-border px-3 sticky top-0 z-60 backdrop-blur-lg bg-background/90'>
+    <div className='max-w-3xl mx-auto flex justify-between items-center py-4 border-b border-border px-3 sticky top-0 z-[999] backdrop-blur-md bg-background/60'>
       <div className='flex items-center space-x-2'>
         <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full' src={"/logo-a.jpg"} alt="" />
         <div>
