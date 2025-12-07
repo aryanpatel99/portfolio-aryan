@@ -1,6 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
-import HeroContainer from './HeroContainer'
 import MainHeroContainer from './MainHeroContainer'
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { TooltipContent, Tooltip, TooltipTrigger } from './ui/tooltip'
 
 const Experience = () => {
     return (
@@ -52,12 +53,25 @@ const Experience = () => {
                                             {/* <img src="" alt="" /> */}
                                         </div>
                                         <div>
-                                            <h2 className='text-xl font-medium text-foreground mb-1'>CredoHire</h2>
-                                            <p className='text-sm text-muted-foreground'>QA and CSM - Intern</p>
+                                            <div className='flex items-center gap-2'>
+                                    <h2 className=' text-sm md:text-lg lg:text-xl font-medium text-foreground mb-1'>CredoHire</h2>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                    <NavLink target='_blank' to={'https://www.credohire.ai/'}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe-icon lucide-globe opacity-50"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                                    </NavLink>
+                                    
+                                    <TooltipContent>
+                                        <p>Visit website</p>
+                                    </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
+                                    </div>
+                                    <p className='sm:text-sm text-xs text-muted-foreground'>QA and CSM - Intern</p>
                                         </div>
                                     </div>
                                     <div className='align-self-end'>
-                                        <p className='text-sm text-muted-foreground'>March 2025 - July 2025</p>
+                                        <p className='sm:text-sm text-xs text-muted-foreground'>March 2025 - July 2025</p>
                                         <div className='flex items-center  gap-2 mt-1'>
                                             <span className='text-xs text-muted-foreground'>Full-time</span>
                                             <span className='text-muted-foreground'>·</span>
