@@ -3,6 +3,7 @@ import { Button } from './ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 import { Send } from 'lucide-react'
 import { Link, NavLink } from 'react-router-dom'
+import { TooltipArrow } from '@radix-ui/react-tooltip'
 
 const MainHeroContainer = () => {
     return (
@@ -110,18 +111,18 @@ const MainHeroContainer = () => {
                                 </div>
                                 <div>
                                     <div className='flex items-center gap-2'>
-                                    <h2 className='sm:text-xl text-sm font-medium text-foreground mb-1'>CredoHire</h2>
-                                    <Tooltip>
-                                        <TooltipTrigger>
-                                    <NavLink target='_blank' to={'https://www.credohire.ai/'}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe-icon lucide-globe opacity-50"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                                    </NavLink>
-                                    
-                                    <TooltipContent>
-                                        <p>Visit website</p>
-                                    </TooltipContent>
-                                        </TooltipTrigger>
-                                    </Tooltip>
+                                        <h2 className='sm:text-xl text-sm font-medium text-foreground mb-1'>CredoHire</h2>
+                                        <Tooltip>
+                                            <TooltipTrigger>
+                                                <NavLink target='_blank' to={'https://www.credohire.ai/'}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe-icon lucide-globe opacity-50"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>
+                                                </NavLink>
+
+                                                <TooltipContent>
+                                                    <p>Visit website</p>
+                                                </TooltipContent>
+                                            </TooltipTrigger>
+                                        </Tooltip>
                                     </div>
                                     <p className='sm:text-sm text-xs text-muted-foreground'>QA and CSM - Intern</p>
                                 </div>
@@ -164,6 +165,169 @@ const MainHeroContainer = () => {
                         </div>
                         <div className='h-px bg-gradient-to-r from-transparent via-border to-transparent mt-16'></div>
                     </div>
+                </div>
+
+                {/* --------projects-------- */}
+                <div>
+                <div className='mt-8'>
+                    <p className='text-muted-foreground text-sm opacity-50'>Featured</p>
+                    <h2 className='text-2xl font-bold'>Projects</h2>
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
+                    {/* project card */}
+                    <div className='group bg-card border border-border rounded-lg overflow-hidden hover:border-zinc-700 transition-all duration-300'>
+                        <div className='relative aspect-video overflow-hidden'>
+                            {/* video */}
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
+                        </div>
+                        <div className='p-6'>
+                            <div className='flex items-start justify-between mb-3'>
+                                <div>
+                                    <h3 className='font-medium text-foreground text-lg mb-1'>Learnify.app</h3>
+                                    <time datetime="" className='text-xs text-muted-foreground'>July 2025 - Present</time>
+                                </div>
+                                <div className='flex items-center gap-2'>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            </a>
+                                            <TooltipContent>
+                                                Visit Website
+                                            </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
+                                </div>
+                            </div>
+                            <p className='text-sm text-muted-foreground leading-relaxed mb-4'>
+                                Learnify is an interactive learning platform with course search, progress tracking, a responsive React + Tailwind UI, and secure Clerk authentication.
+                            </p>
+                            <div className='flex flex-wrap gap-1.5'>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>React.js</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>TailwindCSS</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='group bg-card border border-border rounded-lg overflow-hidden hover:border-zinc-700 transition-all duration-300'>
+                        <div className='relative aspect-video overflow-hidden'>
+                            {/* video */}
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
+                        </div>
+                        <div className='p-6'>
+                            <div className='flex items-start justify-between mb-3'>
+                                <div>
+                                    <h3 className='font-medium text-foreground text-lg mb-1'>Movie Recommendation App</h3>
+                                    <time datetime="" className='text-xs text-muted-foreground'>March - 2025</time>
+                                </div>
+                                <div className='flex items-center gap-2'>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            </a>
+                                            <TooltipContent>
+                                                Visit Website
+                                            </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
+                                </div>
+                            </div>
+                            <p className='text-sm text-zinc-400 leading-relaxed mb-4'>
+                                A modern movie app that displays top trending movies with a clean, responsive design and up-to-date content.
+                            </p>
+                            <div className='flex flex-wrap gap-1.5'>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>React.js</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>TailwindCSS</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Vercel</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Appwrite</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Framer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='group bg-card border border-border rounded-lg overflow-hidden hover:border-zinc-700 transition-all duration-300'>
+                        <div className='relative aspect-video overflow-hidden'>
+                            {/* video */}
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
+                        </div>
+                        <div className='p-6'>
+                            <div className='flex items-start justify-between mb-3'>
+                                <div>
+                                    <h3 className='font-medium text-foreground text-lg mb-1'>Movie Recommendation App</h3>
+                                    <time datetime="" className='text-xs text-muted-foreground'>March - 2025</time>
+                                </div>
+                                <div className='flex items-center gap-2'>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            </a>
+                                            <TooltipContent>
+                                                Visit Website
+                                            </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
+                                </div>
+                            </div>
+                            <p className='text-sm text-zinc-400 leading-relaxed mb-4'>
+                                A modern movie app that displays top trending movies with a clean, responsive design and up-to-date content.
+                            </p>
+                            <div className='flex flex-wrap gap-1.5'>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>React.js</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>TailwindCSS</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Vercel</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Appwrite</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Framer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='group bg-card border border-border rounded-lg overflow-hidden hover:border-zinc-700 transition-all duration-300'>
+                        <div className='relative aspect-video overflow-hidden'>
+                            {/* video */}
+                            <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
+                        </div>
+                        <div className='p-6'>
+                            <div className='flex items-start justify-between mb-3'>
+                                <div>
+                                    <h3 className='font-medium text-foreground text-lg mb-1'>Movie Recommendation App</h3>
+                                    <time datetime="" className='text-xs text-muted-foreground'>March - 2025</time>
+                                </div>
+                                <div className='flex items-center gap-2'>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            </a>
+                                            <TooltipContent>
+                                                Visit Website
+                                            </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
+                                </div>
+                            </div>
+                            <p className='text-sm text-zinc-400 leading-relaxed mb-4'>
+                                A modern movie app that displays top trending movies with a clean, responsive design and up-to-date content.
+                            </p>
+                            <div className='flex flex-wrap gap-1.5'>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>React.js</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>TailwindCSS</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Vercel</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Appwrite</span>
+                                <span className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>Framer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='flex justify-center mt-4'>
+                    <NavLink to={'/projects'}>
+                        <Button variant='outline'>See More Projects</Button>
+                    </NavLink>
+                </div>
                 </div>
             </div>
         </div>

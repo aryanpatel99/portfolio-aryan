@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 const ProjectsPage = () => {
     return (
         <div className='min-h-screen text-foreground'>
@@ -30,9 +31,16 @@ const ProjectsPage = () => {
                                     <time datetime="" className='text-xs text-muted-foreground'>July 2025 - Present</time>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                    </a>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            </a>
+                                            <TooltipContent>
+                                                Visit Website
+                                            </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
                                 </div>
                             </div>
                             <p className='text-sm text-muted-foreground leading-relaxed mb-4'>
@@ -59,9 +67,16 @@ const ProjectsPage = () => {
                                     <time datetime="" className='text-xs text-muted-foreground'>March - 2025</time>
                                 </div>
                                 <div className='flex items-center gap-2'>
-                                    <a href={'https://movie-recommendation-main.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                                    </a>
+                                    <Tooltip>
+                                        <TooltipTrigger>
+                                            <a href={'https://learnify-app-omega.vercel.app/'} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                            </a>
+                                            <TooltipContent>
+                                                Visit Website
+                                            </TooltipContent>
+                                        </TooltipTrigger>
+                                    </Tooltip>
                                 </div>
                             </div>
                             <p className='text-sm text-zinc-400 leading-relaxed mb-4'>
