@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Card from './Card'
+
 
 const HeroLowerBlock = () => {
     return (
@@ -10,6 +12,7 @@ const HeroLowerBlock = () => {
             </div>
             <div className='mt-10 mb-[10px] px-2'>
                 <div className='gap-3 grid grid-cols-1 sm:grid-cols-2 mx-auto pb-10 max-w-[800px] max-h-[470px] overflow-hidden'>
+
                     <div className='group bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden hover:border-zinc-700 transition-all duration-300'>
                         <div className='relative aspect-video overflow-hidden'>
                             {/* video */}
@@ -182,6 +185,8 @@ const HeroLowerBlock = () => {
                             </div>
                         </div>
                     </div>
+
+                    
 
                 </div>
             </div>
