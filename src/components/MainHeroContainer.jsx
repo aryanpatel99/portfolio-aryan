@@ -5,11 +5,12 @@ import { Send } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { TooltipArrow } from "@radix-ui/react-tooltip";
 import Card from "./Card";
-import { experiences, projects } from "@/data/projectsData";
+import { experiences, projects, skills } from "@/data/projectsData";
 import ExperienceCard from "./ExperienceCard";
 import ContributionGraphComponent from "./ContributionGraph";
 import { GitHubCalendar } from "react-github-calendar";
 import { useTheme } from "./theme-provider";
+import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from "./kibo-ui/marquee";
 
 
 const MainHeroContainer = () => {
@@ -27,6 +28,13 @@ const MainHeroContainer = () => {
             setResolvedTheme(theme);
         }
     }, [theme]);
+
+    const explicitTheme = {
+        light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+        // dark: ['#383838', '#4D455D', '#7DB9B6', '#F5E9CF', '#E96479'],
+    }
+
+
 
     return (
         <div className="mx-auto max-w-3xl px-4 min-h-screen py-16">
@@ -341,43 +349,75 @@ const MainHeroContainer = () => {
 
                 <div className="mt-8 flex flex-col md:flex-row gap-8">
                     <img src={'/logo-a.jpg'} loading="lazy" className="size-60 border-2 border-secondary rounded-md" alt="logo" />
-                    <div className="mt-4">
+                    <div className="mt-4 flex-1 min-w-0">
                         <h3 className="text-2xl font-bold">Aryan Patel</h3>
                         <p className="text-muted-foreground mt-4">I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.</p>
+                        <div className="mt-4 overflow-hidden">
+                            <p className="text-muted-foreground text-base font-semibold opacity-50 mb-4">Skills</p>
+                            <Marquee>
+                                <MarqueeFade side="left" />
+                                <MarqueeFade side="right" />
+                                <MarqueeContent>
+                                    {skills.map((skill, index) => (
+                                        <Tooltip key={index}>
+                                            <TooltipTrigger>    
+                                                <MarqueeItem className="h-10 w-10" key={index}>
+                                                    <img
+                                                        alt={`Placeholder ${index}`}
+                                                        className="h-full w-full object-contain"
+                                                        src={skill.img[resolvedTheme]}
+                                                    />
+                                                </MarqueeItem>
+                                                <TooltipContent>
+                                                    <p className="text-xs ">{skill.title}</p>
+                                                </TooltipContent>
+                                            </TooltipTrigger>
+                                        </Tooltip>
+                                    ))}
+                                </MarqueeContent>
+                            </Marquee>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* github activity */}
+            {/* -----------------github activity----------------- */}
             <div className="mt-20">
                 <p className="text-muted-foreground text-sm opacity-50">Featured</p>
                 <h2 className="text-2xl font-bold">Github Activity</h2>
                 <div className="mt-8">
                     {/* <ContributionGraphComponent /> */}
+                    <div className="border border-secondary rounded-md p-4">
+                        <GitHubCalendar
+                            username="aryanpatel99"
+                            colorScheme={resolvedTheme}
+                            theme={explicitTheme}
+                            tooltips={{
+                                activity: {
+                                    text: activity => {
+                                        const date = new Date(activity.date).toLocaleDateString(
+                                            'en-US',
+                                            { year: 'numeric', month: 'short', day: 'numeric' }
+                                        )
 
-                    <GitHubCalendar
-                        username="aryanpatel99"
-                        colorScheme={resolvedTheme}
-                        tooltips={{
-                            activity: {
-                                text: activity => {
-                                    const date = new Date(activity.date).toLocaleDateString(
-                                        'en-US',
-                                        { year: 'numeric', month: 'short', day: 'numeric' }
-                                    )
-
-                                    return `${activity.count} contribution${activity.count !== 1 ? 's' : ''} on ${date}`
+                                        return `${activity.count} contribution${activity.count !== 1 ? 's' : ''} on ${date}`
+                                    },
+                                    placement: 'top',
+                                    offset: 8,
+                                    hoverRestMs: 200,
+                                    withArrow: true,
                                 },
-                                placement: 'top',
-                                offset: 8,
-                                hoverRestMs: 200,
-                                withArrow: true,
-                            },
-                        }}
-                    />
+                            }}
+                        />
+                    </div>
 
 
                 </div>
+            </div>
+
+            {/* cta for meet */}
+            <div>
+
             </div>
 
         </div>
