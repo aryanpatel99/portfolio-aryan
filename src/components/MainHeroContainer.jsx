@@ -392,6 +392,7 @@ const MainHeroContainer = () => {
                             username="aryanpatel99"
                             colorScheme={resolvedTheme}
                             theme={explicitTheme}
+                            year={new Date().getFullYear()}
                             tooltips={{
                                 activity: {
                                     text: activity => {
