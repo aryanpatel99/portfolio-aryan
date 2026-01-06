@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
+import WorldIcon from './ui/world-icon'
 
 const Card = ({
     title,
@@ -26,7 +27,8 @@ const Card = ({
                             <Tooltip>
                                 <TooltipTrigger>
                                     <a href={liveUrl} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-foreground transition-colors'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg> */}
+                                        <WorldIcon className="opacity-50 hover:opacity-100" size={16} />
                                     </a>
                                     <TooltipContent>
                                         Visit Website
