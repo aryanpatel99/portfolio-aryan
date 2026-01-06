@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Send } from "lucide-react";
@@ -20,6 +20,8 @@ import SendIcon from "./ui/send-icon";
 const MainHeroContainer = () => {
     const { theme } = useTheme();
     const [resolvedTheme, setResolvedTheme] = useState("dark");
+    const fileIconRef = useRef(null);
+    const sendIconRef = useRef(null);
 
     useEffect(() => {
         if (theme === "system") {
@@ -66,12 +68,17 @@ const MainHeroContainer = () => {
                 </div>
                 {/* -------------CTA----------- */}
                 <div className="mt-8 flex gap-4">
-                    <Button variant="outline">
-                        <FileDescriptionIcon className="size-4" />
+                    <Button
+                        variant="outline"
+                        onMouseEnter={() => fileIconRef.current?.startAnimation()}
+                        onMouseLeave={() => fileIconRef.current?.stopAnimation()}
+                    >
+                        <FileDescriptionIcon ref={fileIconRef} className="size-4" />
                         Resume/CV
                     </Button>
-                    <Button variant="default">
-                        <Send className="size-3.5" />
+                    <Button variant="default" onMouseEnter={() => sendIconRef.current?.startAnimation()} onMouseLeave={() => sendIconRef.current?.stopAnimation()}>
+                        {/* <Send className="size-3.5" /> */}
+                        <SendIcon ref={sendIconRef} className="size-4" />
                         Get in Touch
                     </Button>
                 </div>
@@ -372,7 +379,7 @@ const MainHeroContainer = () => {
                                 <MarqueeContent>
                                     {skills.map((skill, index) => (
                                         <Tooltip key={index}>
-                                            <TooltipTrigger>    
+                                            <TooltipTrigger>
                                                 <MarqueeItem className="h-10 w-10" key={index}>
                                                     <img
                                                         alt={`Placeholder ${index}`}

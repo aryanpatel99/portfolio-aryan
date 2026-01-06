@@ -12,7 +12,7 @@ const WorldIcon = forwardRef((
     animate(".world-meridians", {
       pathLength: [0, 1],
     }, {
-      duration: 1,
+      duration: 0.5,
       ease: "linear",
     });
   }, [animate]);
@@ -21,7 +21,7 @@ const WorldIcon = forwardRef((
     animate(".world-meridians", {
       pathLength: 1,
     }, {
-      duration: 0.2,
+      duration: 0.5,
       ease: "easeInOut",
     });
   }, [animate]);
