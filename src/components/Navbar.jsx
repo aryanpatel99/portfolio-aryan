@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ModeToggle } from './mode-toggle'
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className='max-w-3xl mx-auto flex justify-between items-center py-4 border-b border-border px-3 sticky top-0 z-[999] backdrop-blur-md bg-background/60'>
       <div className='flex items-center space-x-2'>
-        <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full' src={"/logo-a.jpg"} alt="" />
+        <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full cursor-pointer' src={"/logo-a.jpg"} alt="" onClick={() => navigate("/")} />
         <div>
           <h1 className='text-sm'>Aryan</h1>
           <p className='text-muted-foreground text-xs'>Software Developer</p>

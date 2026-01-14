@@ -15,6 +15,7 @@ import GithubIcon from "./ui/github-icon";
 import WorldIcon from "./ui/world-icon";
 import FileDescriptionIcon from "./ui/file-description-icon";
 import SendIcon from "./ui/send-icon";
+import CTA from "./CTA";
 
 
 const MainHeroContainer = () => {
@@ -406,7 +407,7 @@ const MainHeroContainer = () => {
                 <h2 className="text-2xl font-bold">Github Activity</h2>
                 <div className="mt-8">
                     {/* <ContributionGraphComponent /> */}
-                    <div className="border border-secondary rounded-md p-4">
+                    <div className="border border-secondary rounded-md drop-shadow-xs p-4">
                         <GitHubCalendar
                             username="aryanpatel99"
                             colorScheme={resolvedTheme}
@@ -436,9 +437,21 @@ const MainHeroContainer = () => {
             </div>
 
             {/* cta for meet */}
-            <div>
+            {/* <div className="mt-20 border border-secondary rounded-md py-8 drop-shadow-xs">
+                <div className="flex flex-col gap-2 items-center justify-center my-5 sm:px-12 px-6">
+                    <p className="text-center sm:text-lg text-base font-semibold">Hey, you scrolled this far, let's talk</p>
+                    <div>
+                        <Button variant="secondary" className="gap-2">
+                            <img src="/logo-a.jpg" alt="aryan" className="size-6 rounded-full" />
+                            Book a Free Call
+                        </Button>
+                    </div>
 
-            </div>
+                </div>
+
+            </div> */}
+
+            <CTA />
 
         </div>
     );
