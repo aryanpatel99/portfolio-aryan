@@ -16,7 +16,7 @@ const ProjectsPage = () => {
                 <div className='mb-10'>
                     <h1 className='text-4xl font-bold mb-8'>My Projects</h1>
                     <p className='text-lg text-muted-foreground leading-relaxed max-w-3xl'>
-                        A showcase of the projects I've built so far — from early experiments to practical applications. While still evolving, each project highlights my focus on clarity, functionality, and continuous growth as a developer.
+                        A showcase of the projects I've built so far - from early experiments to practical applications. While still evolving, each project highlights my focus on clarity, functionality, and continuous growth as a developer.
                     </p>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>

@@ -26,7 +26,7 @@ const Experience = () => {
                                 <h2 className='text-xl font-semibold mb-4 text-foreground'>Technologies & Tools</h2>
                                 <div className='flex flex-wrap gap-2 break-words'>
                                     {skills.map((skill, index) => (
-                                        <div key={skill} className='bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors '>{skill.title}</div>
+                                        <div key={skill} className='bg-card border border-dashed  border-black/20 dark:border-white/30 text-[14px] rounded-lg px-2.5 py-1 text-xs font-medium hover:border-black/50 dark:hover:border-white/50 transition-colors '>{skill.title}</div>
                                     ))}
                                 </div>
                             </div>

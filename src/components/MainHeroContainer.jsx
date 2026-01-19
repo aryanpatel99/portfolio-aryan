@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Send } from "lucide-react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Card from "./Card";
 import { experiences, projects, skills } from "@/data/projectsData";
 import { GitHubCalendar } from "react-github-calendar";
@@ -16,6 +16,8 @@ import WorldIcon from "./ui/world-icon";
 import FileDescriptionIcon from "./ui/file-description-icon";
 import SendIcon from "./ui/send-icon";
 import CTA from "./CTA";
+import HeroButton from "./HeroButton";
+import ExperienceCard from "./ExperienceCard";
 
 
 const MainHeroContainer = () => {
@@ -23,6 +25,7 @@ const MainHeroContainer = () => {
     const [resolvedTheme, setResolvedTheme] = useState("dark");
     const fileIconRef = useRef(null);
     const sendIconRef = useRef(null);
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (theme === "system") {
@@ -61,15 +64,15 @@ const MainHeroContainer = () => {
                             A Full Stack Developer.
                         </span>
                     </h1>
-                    <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base text-muted-foreground md:text-lg whitespace-pre-wrap">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur
-                        optio nobis fugit omnis harum. Fuga mollitia atque delectus deleniti
-                        et voluptatum aliquam beatae pariatur. Dolor!
+                    <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base text-muted-foreground md:text-lg whitespace-pre-wrap leading-7">
+                        I build interactive, responsive, and accessible web applications using<HeroButton text="TypeScript" />, <HeroButton text="React.js" />, <HeroButton text="Next.js" />, and <HeroButton text="Node.js" />.
+                        <span>Focused on delivering seamless and intuitive user experiences.</span>
                     </div>
                 </div>
                 {/* -------------CTA----------- */}
                 <div className="mt-8 flex gap-4">
                     <Button
+                        onClick={() => navigate("/resume")}
                         variant="outline"
                         onMouseEnter={() => fileIconRef.current?.startAnimation()}
                         onMouseLeave={() => fileIconRef.current?.stopAnimation()}
@@ -77,14 +80,14 @@ const MainHeroContainer = () => {
                         <FileDescriptionIcon ref={fileIconRef} className="size-4" />
                         Resume/CV
                     </Button>
-                    <Button variant="default" onMouseEnter={() => sendIconRef.current?.startAnimation()} onMouseLeave={() => sendIconRef.current?.stopAnimation()}>
+                    <Button onClick={()=> window.location.href = "mailto:aryanpatel6215@gmail.com?subject=Let's Connect"} variant="default" onMouseEnter={() => sendIconRef.current?.startAnimation()} onMouseLeave={() => sendIconRef.current?.stopAnimation()}>
                         {/* <Send className="size-3.5" /> */}
-                        <SendIcon ref={sendIconRef} className="size-4" />
+                        <SendIcon  ref={sendIconRef} className="size-4" />
                         Get in Touch
                     </Button>
                 </div>
                 {/* --------------socials----------- */}
-                <div className="mt-8 flex gap-3 items-center">
+                <div className="mt-8 flex gap-2 items-center">
                     <Tooltip>
                         <TooltipTrigger>
                             <a target="_blank" href={"https://x.com/AryanPatel_8299"}>
@@ -188,18 +191,6 @@ const MainHeroContainer = () => {
                     <Tooltip>
                         <TooltipTrigger>
                             <a target="_blank" href={"https://github.com/aryanpatel99"}>
-                                {/* <svg
-                                    className="opacity-50"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor"
-                                    x="0px"
-                                    y="0px"
-                                    width="1.6em"
-                                    height="1.6em"
-                                    viewBox="0 0 30 30"
-                                >
-                                    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                                </svg> */}
                                 <GithubIcon className="opacity-50" size={24} />
                             </a>
                             <TooltipContent>
@@ -226,9 +217,8 @@ const MainHeroContainer = () => {
                     <div className="group">
                         <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-lg border border-border bg-card flex items-center justify-center overflow-hidden">
-                                    {/* add the company logo here */}
-                                    {/* <img src="" alt="" /> */}
+                                <div className="w-12 h-12 rounded-lg border border-border bg-card flex flex-wrap items-center justify-center overflow-hidden">
+                                    {/* <img src="./credohire-logo.png"  alt="img" />} */}<span className="text-xs tracking-tight opacity-50">Cred</span> 
                                 </div>
                                 <div>
                                     <div className="flex items-center gap-2">
@@ -241,22 +231,6 @@ const MainHeroContainer = () => {
                                                     target="_blank"
                                                     to={"https://www.credohire.ai/"}
                                                 >
-                                                    {/* <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="15"
-                                                        height="15"
-                                                        viewBox="0 0 24 24"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        strokeWidth="2"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                        className="lucide lucide-globe-icon lucide-globe opacity-50"
-                                                    >
-                                                        <circle cx="12" cy="12" r="10" />
-                                                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                                                        <path d="M2 12h20" />
-                                                    </svg> */}
                                                     <WorldIcon className="opacity-50 hover:opacity-100" size={16} />
                                                 </NavLink>
 
@@ -436,21 +410,7 @@ const MainHeroContainer = () => {
                 </div>
             </div>
 
-            {/* cta for meet */}
-            {/* <div className="mt-20 border border-secondary rounded-md py-8 drop-shadow-xs">
-                <div className="flex flex-col gap-2 items-center justify-center my-5 sm:px-12 px-6">
-                    <p className="text-center sm:text-lg text-base font-semibold">Hey, you scrolled this far, let's talk</p>
-                    <div>
-                        <Button variant="secondary" className="gap-2">
-                            <img src="/logo-a.jpg" alt="aryan" className="size-6 rounded-full" />
-                            Book a Free Call
-                        </Button>
-                    </div>
-
-                </div>
-
-            </div> */}
-
+            {/* -----------CTA----------- */}
             <CTA />
 
         </div>
