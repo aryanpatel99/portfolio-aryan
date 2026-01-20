@@ -17,52 +17,14 @@ export const projects = [
     techStack: ["React.js", "Node.js", "TailwindCSS", "Vercel"],
     liveUrl: "https://trend-i-j816.vercel.app/",
   },
-  ,
   {
     id: 3,
-    title: "To-Do List",
-    duration: "March 2025",
+    title: "Crypto Tracker",
+    duration: "Nov 2025",
     description:
-      "A simple to-do list application with user authentication and data storage using Firebase.",
-    techStack: ["React.js", "TailwindCSS", "Firebase"],
-    liveUrl: "https://to-do-list-app-omega.vercel.app/",
-  },
-  {
-    id: 4,
-    title: "Chess AI",
-    duration: "August 2024",
-    description:
-      "A simple chess AI using the Minimax algorithm that can play against the user.",
-    techStack: ["Python", "Tkinter"],
-    liveUrl: null,
-  },
-  ,
-  {
-    id: 5,
-    title: "Simple Chatbot",
-    duration: "September 2024",
-    description:
-      "A simple chatbot application using Node.js and Dialogflow that can answer basic user queries.",
-    techStack: ["Node.js", "Dialogflow"],
-    liveUrl: null,
-  },
-  {
-    id: 6,
-    title: "Weather App",
-    duration: "November 2024",
-    description:
-      "A simple weather application using React.js and OpenWeatherMap API that can display current weather conditions.",
-    techStack: ["React.js", "OpenWeatherMap API"],
-    liveUrl: "https://weather-app-omega.vercel.app/",
-  },
-  {
-    id: 7,
-    title: "Personal Website",
-    duration: "December 2024",
-    description:
-      "A personal website built using React.js, TailwindCSS, and Vercel that displays my projects and experience.",
-    techStack: ["React.js", "TailwindCSS", "Vercel"],
-    liveUrl: "https://aryanbento.dev/",
+      "Crypto Tracker is an interactive crypto tracker platform with responsive UI.",
+    techStack: ["Next.js", "TailwindCSS", "Vercel"],
+    liveUrl: "https://crypto-tracker-virid-three.vercel.app/",
   },
 ];
 
