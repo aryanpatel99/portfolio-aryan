@@ -22,10 +22,11 @@ const ProjectsPage = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     {/* project card */}
                     
-                   {projects.map((project) => (
+                   {projects.map((project ) => (
                     <Card 
                         key={project.id}
                         title={project.title}
+                        img={project.img}
                         duration={project.duration}
                         description={project.description}
                         techStack={project.techStack}

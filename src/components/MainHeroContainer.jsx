@@ -18,6 +18,7 @@ import SendIcon from "./ui/send-icon";
 import CTA from "./CTA";
 import HeroButton from "./HeroButton";
 import ExperienceCard from "./ExperienceCard";
+import { NextJSIcon, NodeJSIcon, ReactIcon, TypeScriptIcon } from "@/icons";
 
 
 const MainHeroContainer = () => {
@@ -65,7 +66,7 @@ const MainHeroContainer = () => {
                         </span>
                     </h1>
                     <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base text-muted-foreground md:text-lg whitespace-pre-wrap leading-7">
-                        I build interactive, responsive, and accessible web applications using<HeroButton text="TypeScript" />, <HeroButton text="React.js" />, <HeroButton text="Next.js" />, and <HeroButton text="Node.js" />.
+                        I build interactive, responsive, and accessible web applications using<HeroButton text="TypeScript" icon={<TypeScriptIcon/>} />, <HeroButton text="React.js" icon={<ReactIcon/>} />, <HeroButton text="Next.js" icon={<NextJSIcon/>} />, and <HeroButton text="Node.js" icon={<NodeJSIcon/>} />.
                         <span>Focused on delivering seamless and intuitive user experiences.</span>
                     </div>
                 </div>
@@ -266,9 +267,9 @@ const MainHeroContainer = () => {
                             <div className="bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors ">
                                 Next.js
                             </div>
-                            <div className="bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors ">
+                            {/* <div className="bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors ">
                                 Excel
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="space-y-3">
@@ -320,6 +321,7 @@ const MainHeroContainer = () => {
                             <Card
                                 key={project.id}
                                 title={project.title}
+                                img={project.img}
                                 duration={project.duration}
                                 description={project.description}
                                 techStack={project.techStack}

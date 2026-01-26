@@ -2,6 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "Draft",
+    img:"./stage-draft.png",
     duration: "Dec 2025 - Jan 2026",
     description:
       "Draft is an interactive blogging platform with responsive UI, and Clerk authentication.",
@@ -11,6 +12,7 @@ export const projects = [
   {
     id: 2,
     title: "Trendi",
+    img:"./stage-trendi.png",
     duration: "June 2025",
     description:
       "Trendi is an interactive e-commerce platform with responsive UI, and Clerk authentication.",
@@ -19,13 +21,25 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Agent Force Landing Page",
+    img:"./stage-agentForce.png",
+    duration: "Nov 2025",
+    description:
+      "Agent Force Landing Page is an interactive landing page with responsive UI.",
+    techStack: ["Next.js", "TailwindCSS", "Vercel", "Acternity UI"],
+    liveUrl: "https://landing-page-amber-two-40.vercel.app/",
+  },
+  {
+    id: 4,
     title: "Crypto Tracker",
+    img:"./stage-crypto.png",
     duration: "Nov 2025",
     description:
       "Crypto Tracker is an interactive crypto tracker platform with responsive UI.",
     techStack: ["Next.js", "TailwindCSS", "Vercel"],
     liveUrl: "https://crypto-tracker-virid-three.vercel.app/",
-  },
+  }
+
 ];
 
 export const skills = [

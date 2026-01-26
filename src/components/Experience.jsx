@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { TooltipContent, Tooltip, TooltipTrigger } from './ui/tooltip'
 import { experiences, skills } from '@/data/projectsData'
 import ExperienceCard from './ExperienceCard'
+import WorldIcon from './ui/world-icon'
 
 const Experience = () => {
     return (
@@ -32,14 +33,105 @@ const Experience = () => {
                             </div>
                         </div>
                         <div className='space-y-16'>
-                            {experiences.map((experience) => (
+                            {/* {experiences.map((experience) => (
                         <ExperienceCard key={experience.id} {...experience} />
-                    ))}
+                    ))} */}
 
-                            
+                            <div className="group">
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 rounded-lg border border-border bg-card flex flex-wrap items-center justify-center overflow-hidden">
+                                            {/* <img src="./credohire-logo.png"  alt="img" />} */}<span className="text-xs tracking-tight opacity-50">Cred</span>
+                                        </div>
+                                        <div>
+                                            <div className="flex items-center gap-2">
+                                                <h2 className="sm:text-xl text-sm font-medium text-foreground mb-1">
+                                                    CredoHire
+                                                </h2>
+                                                <Tooltip>
+                                                    <TooltipTrigger>
+                                                        <NavLink
+                                                            target="_blank"
+                                                            to={"https://www.credohire.ai/"}
+                                                        >
+                                                            <WorldIcon className="opacity-50 hover:opacity-100" size={16} />
+                                                        </NavLink>
+
+                                                        <TooltipContent>
+                                                            <p>Visit website</p>
+                                                        </TooltipContent>
+                                                    </TooltipTrigger>
+                                                </Tooltip>
+                                            </div>
+                                            <p className="sm:text-sm text-xs text-muted-foreground">
+                                                QA and CSM - Intern
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="align-self-end sm:text-sm text-xs">
+                                        <p className="sm:text-sm text-xs text-muted-foreground">
+                                            March 2025 - July 2025
+                                        </p>
+                                        <div className="flex items-center  gap-2 mt-1">
+                                            <span className="text-xs text-muted-foreground">
+                                                Full-time
+                                            </span>
+                                            <span className="text-muted-foreground">·</span>
+                                            <span className="text-xs text-muted-foreground">Remote</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-wrap gap-2 mb-8">
+                                    <div className="bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors ">
+                                        Manual Testing
+                                    </div>
+                                    <div className="bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors ">
+                                        Next.js
+                                    </div>
+                                    {/* <div className="bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors ">
+                                        Excel
+                                    </div> */}
+                                </div>
+
+                                <div className="space-y-3">
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            Collaborated with the development team to identify, document,
+                                            and resolve multiple bugs, leading to a smoother and more
+                                            reliable user experience.
+                                        </p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            Conducted functional and UI/UX testing, providing actionable
+                                            feedback that enhanced product performance.
+                                        </p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            Worked closely with mentors and senior developers to
+                                            understand workflows, debug issues, and suggest improvements.
+                                        </p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0"></div>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">
+                                            Improved product usability by identifying and reporting edge
+                                            cases during testing.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mt-16"></div>
+                            </div>
+
+
                             <div className='h-px bg-gradient-to-r from-transparent via-border to-transparent mt-16'></div>
 
-                            
+
                         </div>
                     </div>
                 </div>
