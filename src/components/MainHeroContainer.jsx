@@ -53,8 +53,8 @@ const MainHeroContainer = () => {
                 <div className="relative inline-block">
                     <img
                         loading="lazy"
-                        className="size-24 rounded-full border border-border"
-                        src="/logo-a.jpg"
+                        className="size-24 rounded-full border border-border object-cover"
+                        src="/aizen-pixelated.png"
                         alt=""
                     />
                 </div>
@@ -344,7 +344,7 @@ const MainHeroContainer = () => {
                 <h2 className="text-2xl font-bold">Me</h2>
 
                 <div className="mt-8 flex flex-col md:flex-row gap-8">
-                    <img src={'/logo-a.jpg'} loading="lazy" className="size-60 border-2 border-secondary rounded-md" alt="logo" />
+                    <img src={'/aizen-pixelated.png'} loading="lazy" className="size-60 border-2 border-secondary rounded-md object-cover" alt="logo" />
                     <div className="mt-4 flex-1 min-w-0">
                         <h3 className="text-2xl font-bold">Aryan Patel</h3>
                         <p className="text-muted-foreground mt-4">I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.</p>

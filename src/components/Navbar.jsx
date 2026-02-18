@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className='max-w-3xl mx-auto flex justify-between items-center py-4 border-b border-border px-3 sticky top-0 z-[999] backdrop-blur-md bg-background/60'>
       <div className='flex items-center space-x-2'>
-        <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full cursor-pointer' src={"/logo-a.jpg"} alt="" onClick={() => navigate("/")} />
+        <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full object-cover cursor-pointer' src={"/aizen-pixelated.png"} alt="" onClick={() => navigate("/")} />
         <div>
           <h1 className='text-sm'>Aryan</h1>
           <p className='text-muted-foreground text-xs'>Software Developer</p>
