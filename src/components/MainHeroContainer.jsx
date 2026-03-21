@@ -19,6 +19,7 @@ import CTA from "./CTA";
 import HeroButton from "./HeroButton";
 import ExperienceCard from "./ExperienceCard";
 import { NextJSIcon, NodeJSIcon, ReactIcon, TypeScriptIcon } from "@/icons";
+import OpenSourceContributions from "./OpenSourceContributions";
 
 
 const MainHeroContainer = () => {
@@ -411,6 +412,8 @@ const MainHeroContainer = () => {
 
                 </div>
             </div>
+
+            <OpenSourceContributions />
 
             {/* -----------CTA----------- */}
             <CTA />
