@@ -14,6 +14,9 @@ const OpenSourceContributions = () => {
             try {
                 setLoading(true)
                 const response = await fetch("/api/github-contributions")
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`)
+                }
                 const data = await response.json()
 
                 if (data.success && data.contributions.length > 0) {
@@ -62,8 +65,13 @@ const OpenSourceContributions = () => {
                                 <p className="text-sm text-zinc-400">{c.description}</p>
                             </div>
 
-                            <a href={c.link} target="_blank">
-                                <ArrowUpRight />
+                            <a
+                                href={c.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`View ${c.title} on GitHub`}
+                            >
+                                <ArrowUpRight aria-hidden="true" />
                             </a>
                         </motion.div>
                     ))}
