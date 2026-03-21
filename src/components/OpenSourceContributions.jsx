@@ -13,7 +13,8 @@ const OpenSourceContributions = () => {
         async function load() {
             try {
                 setLoading(true)
-                const response = await fetch("/api/github-contributions")
+                const API_BASE = import.meta.env.VITE_API_BASE || "";
+                const response = await fetch(`${API_BASE}/api/github-contributions`)
                 if (!response.ok) {
                     throw new Error(`HTTP error: ${response.status}`)
                 }
