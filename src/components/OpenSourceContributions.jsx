@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from "lucide-react";
 import { fallbackContributions } from "../data/fallbackContributions";
 
@@ -50,8 +50,9 @@ const OpenSourceContributions = () => {
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: i * 0.1 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-30px" }}
+                            transition={{ delay: i * 0.08, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                             className="flex justify-between border-b border-zinc-700 pb-3"
                         >
                             <div>

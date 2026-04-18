@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { motion } from "motion/react";
 import { Button } from "./ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { Send } from "lucide-react";
@@ -21,6 +22,18 @@ import ExperienceCard from "./ExperienceCard";
 import { NextJSIcon, NodeJSIcon, ReactIcon, TypeScriptIcon } from "@/icons";
 import OpenSourceContributions from "./OpenSourceContributions";
 
+// Reusable scroll-triggered section wrapper
+const ScrollReveal = ({ children, className, delay = 0 }) => (
+    <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] }}
+        className={className}
+    >
+        {children}
+    </motion.div>
+);
 
 const MainHeroContainer = () => {
     const { theme } = useTheme();
@@ -46,20 +59,45 @@ const MainHeroContainer = () => {
         // dark: ['#383838', '#4D455D', '#7DB9B6', '#F5E9CF', '#E96479'],
     }
 
+    // Stagger container for the hero intro
+    const heroStagger = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.12,
+                delayChildren: 0.1,
+            },
+        },
+    };
 
+    const heroChild = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+        },
+    };
 
     return (
         <div className="mx-auto max-w-3xl px-4 min-h-screen py-16">
-            <div className="mx-auto max-w-3xl">
-                <div className="relative inline-block">
+            {/* Hero intro — staggered fade-in on load */}
+            <motion.div
+                className="mx-auto max-w-3xl"
+                variants={heroStagger}
+                initial="hidden"
+                animate="visible"
+            >
+                <motion.div className="relative inline-block" variants={heroChild}>
                     <img
                         loading="lazy"
                         className="size-24 rounded-full border border-border object-cover"
                         src="/aizen-pixelated.png"
                         alt=""
                     />
-                </div>
-                <div className="mt-8 flex flex-col gap-2">
+                </motion.div>
+                <motion.div className="mt-8 flex flex-col gap-2" variants={heroChild}>
                     <h1 className="text-4xl font-semibold">
                         Hi I'm Aryan -{" "}
                         <span className="text-muted-foreground font-md">
@@ -70,9 +108,9 @@ const MainHeroContainer = () => {
                         I build interactive, responsive, and accessible web applications using<HeroButton text="TypeScript" icon={<TypeScriptIcon/>} />, <HeroButton text="React.js" icon={<ReactIcon/>} />, <HeroButton text="Next.js" icon={<NextJSIcon/>} />, and <HeroButton text="Node.js" icon={<NodeJSIcon/>} />.
                         <span>Focused on delivering seamless and intuitive user experiences.</span>
                     </div>
-                </div>
+                </motion.div>
                 {/* -------------CTA----------- */}
-                <div className="mt-8 flex gap-4">
+                <motion.div className="mt-8 flex gap-4" variants={heroChild}>
                     <Button
                         onClick={() => navigate("/resume")}
                         variant="outline"
@@ -87,24 +125,12 @@ const MainHeroContainer = () => {
                         <SendIcon  ref={sendIconRef} className="size-4" />
                         Get in Touch
                     </Button>
-                </div>
+                </motion.div>
                 {/* --------------socials----------- */}
-                <div className="mt-8 flex gap-2 items-center">
+                <motion.div className="mt-8 flex gap-2 items-center" variants={heroChild}>
                     <Tooltip>
                         <TooltipTrigger>
-                            <a target="_blank" href={"https://x.com/AryanPatel_8299"}>
-                                {/* <svg
-                                    stroke="currentColor"
-                                    className="opacity-50"
-                                    fill="currentColor"
-                                    strokeWidth="0"
-                                    viewBox="0 0 16 16"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
-                                </svg> */}
+                            <a target="_blank" href={"https://x.com/codexaryan"}>
                                 <TwitterXIcon size={24} className="opacity-50" />
                             </a>
                             <TooltipContent>
@@ -119,18 +145,6 @@ const MainHeroContainer = () => {
                                 target="_blank"
                                 href={"https://www.linkedin.com/in/aryan-patel-100aa7307/"}
                             >
-                                {/* <svg
-                                    className="opacity-50"
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    strokeWidth="0"
-                                    viewBox="0 0 16 16"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
-                                </svg> */}
                                 <LinkedinIcon size={24} className="opacity-50" />
                             </a>
                             <TooltipContent>
@@ -142,21 +156,6 @@ const MainHeroContainer = () => {
                     <Tooltip>
                         <TooltipTrigger>
                             <a target="_blank" href={"mailto:aryanpatel6215@gmail.com"}>
-                                {/* <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className=" opacity-50 lucide lucide-mail-icon lucide-mail"
-                                >
-                                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                                </svg> */}
                                 <MailFilledIcon size={24} className="opacity-50" />
                             </a>
                             <TooltipContent>
@@ -200,22 +199,18 @@ const MainHeroContainer = () => {
                             </TooltipContent>
                         </TooltipTrigger>
                     </Tooltip>
-                </div>
+                </motion.div>
                 {/* <div></div> */}
 
                 {/* add spotify player */}
-            </div>
+            </motion.div>
 
             {/* ----------------experiences---------------- */}
-            <div className="mt-20">
+            <ScrollReveal className="mt-20">
                 <p className="text-muted-foreground text-sm opacity-50">Featured</p>
                 <h2 className="text-2xl font-bold">Experiences</h2>
 
                 <div className="space-y-16 mt-8">
-                    {/* {experiences.map((experience) => (
-                        <ExperienceCard key={experience.id} {...experience} />
-                    ))} */}
-
                     <div className="group">
                         <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-4">
@@ -309,7 +304,7 @@ const MainHeroContainer = () => {
                 </div>
 
                 {/* ------------projects----------- */}
-                <div>
+                <ScrollReveal>
                     <div className="mt-8">
                         <p className="text-muted-foreground text-sm opacity-50">Featured</p>
                         <h2 className="text-2xl font-bold">Projects</h2>
@@ -318,16 +313,27 @@ const MainHeroContainer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         {/* ----------------project card---------------- */}
 
-                        {projects.slice(0, 5).map((project) => (
-                            <Card
+                        {projects.slice(0, 5).map((project, index) => (
+                            <motion.div
                                 key={project.id}
-                                title={project.title}
-                                img={project.img}
-                                duration={project.duration}
-                                description={project.description}
-                                techStack={project.techStack}
-                                liveUrl={project.liveUrl}
-                            />
+                                initial={{ opacity: 0, y: 25 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-40px" }}
+                                transition={{
+                                    duration: 0.45,
+                                    delay: index * 0.08,
+                                    ease: [0.25, 0.1, 0.25, 1],
+                                }}
+                            >
+                                <Card
+                                    title={project.title}
+                                    img={project.img}
+                                    duration={project.duration}
+                                    description={project.description}
+                                    techStack={project.techStack}
+                                    liveUrl={project.liveUrl}
+                                />
+                            </motion.div>
                         ))}
                     </div>
 
@@ -336,16 +342,25 @@ const MainHeroContainer = () => {
                             <Button variant="outline">See More Projects</Button>
                         </NavLink>
                     </div>
-                </div>
-            </div>
+                </ScrollReveal>
+            </ScrollReveal>
 
             {/* ------------about----------- */}
-            <div className="mt-20">
+            <ScrollReveal className="mt-20">
                 <p className="text-muted-foreground text-sm opacity-50">About</p>
                 <h2 className="text-2xl font-bold">Me</h2>
 
                 <div className="mt-8 flex flex-col md:flex-row gap-8">
-                    <img src={'/aizen-pixelated.png'} loading="lazy" className="size-60 border-2 border-secondary rounded-md object-cover" alt="logo" />
+                    <motion.img
+                        src={'/aizen-pixelated.png'}
+                        loading="lazy"
+                        className="size-60 border-2 border-secondary rounded-md object-cover"
+                        alt="logo"
+                        initial={{ opacity: 0, scale: 0.92 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                    />
                     <div className="mt-4 flex-1 min-w-0">
                         <h3 className="text-2xl font-bold">Aryan Patel</h3>
                         <p className="text-muted-foreground mt-4">I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.</p>
@@ -376,10 +391,10 @@ const MainHeroContainer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </ScrollReveal>
 
             {/* -----------------github activity----------------- */}
-            <div className="mt-20">
+            <ScrollReveal className="mt-20">
                 <p className="text-muted-foreground text-sm opacity-50">Featured</p>
                 <h2 className="text-2xl font-bold">Github Activity</h2>
                 <div className="mt-8">
@@ -411,12 +426,16 @@ const MainHeroContainer = () => {
 
 
                 </div>
-            </div>
+            </ScrollReveal>
 
-            <OpenSourceContributions />
+            <ScrollReveal>
+                <OpenSourceContributions />
+            </ScrollReveal>
 
             {/* -----------CTA----------- */}
-            <CTA />
+            <ScrollReveal>
+                <CTA />
+            </ScrollReveal>
 
         </div>
     );

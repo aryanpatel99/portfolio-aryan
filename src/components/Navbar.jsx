@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ModeToggle } from './mode-toggle'
+import { motion } from 'motion/react'
+
 const Navbar = () => {
   const navigate = useNavigate();
   return (
-    <div className='max-w-3xl mx-auto flex justify-between items-center py-4 border-b border-border px-3 sticky top-0 z-[999] backdrop-blur-md bg-background/60'>
+    <motion.div
+      className='max-w-3xl mx-auto flex justify-between items-center py-4 border-b border-border px-3 sticky top-0 z-[999] backdrop-blur-md bg-background/60'
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+    >
       <div className='flex items-center space-x-2'>
         <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full object-cover cursor-pointer' src={"/aizen-pixelated.png"} alt="" onClick={() => navigate("/")} />
         <div>
@@ -32,7 +39,7 @@ const Navbar = () => {
         </NavLink>
         <ModeToggle />
       </div>
-    </div>
+    </motion.div>
   )
 }
 
