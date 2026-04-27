@@ -1,0 +1,61 @@
+src/lib/cloudinary.js
+  461abcab43209298 1-4
+src/components/sections/HeroSection.jsx
+  461abcab43209298 14,69
+src/components/CTA.jsx
+  461abcab43209298 5,23
+src/components/Navbar.jsx
+  461abcab43209298 5,17
+scripts/fetch-contributions.mjs
+  e739b221534308c7 1-77
+src/components/OpenSourceContributions.jsx
+  e739b221534308c7 5,9,12-13,15-20,22-24,26,38,72
+package.json
+  e739b221534308c7 8-9
+src/data/projectsData.js
+  461abcab43209298 1-2,7,17,27,37,47
+server/index.js
+  e739b221534308c7 11,13-27,30-31,33,35-36,39-45,48,50-55,57-60,62,64-65,67,69
+src/data/contributions.json
+  e739b221534308c7 1-34
+src/components/sections/AboutSection.jsx
+  461abcab43209298 8,20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "1590693e4359b7eca7e09bcf9f3903e7b052f5aa",
+  "prompts": {
+    "461abcab43209298": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "66ecadc4-e0af-4c3d-8a6a-7436b48249d6",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 22,
+      "total_deletions": 12,
+      "accepted_lines": 19,
+      "overriden_lines": 0
+    },
+    "e739b221534308c7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3e26924-eeb6-4bf3-bac8-08a86feaa504",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 201,
+      "total_deletions": 95,
+      "accepted_lines": 177,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
