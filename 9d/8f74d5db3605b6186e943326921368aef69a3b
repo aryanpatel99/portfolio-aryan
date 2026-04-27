@@ -1,0 +1,33 @@
+src/components/HeroLowerBlock.jsx
+  505ff355adf09276 17,23-24,27,33,36-41,54-55,58,64,69,82-83,86,92,97-98
+src/components/MainHeroContainer.jsx
+  h_e67cc62ab13a2f 316
+src/data/projectsData.js
+  505ff355adf09276 4-13,18-19,23,28-29,33,38,43,51
+  h_e67cc62ab13a2f 39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "9d8f74d5db3605b6186e943326921368aef69a3b",
+  "prompts": {
+    "505ff355adf09276": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e737e19b-8d21-4224-85c2-4b97216fa693",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 69,
+      "total_deletions": 145,
+      "accepted_lines": 44,
+      "overriden_lines": 1
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
