@@ -1,8 +1,10 @@
+import { cld } from "@/lib/cloudinary";
+
 export const projects = [
   {
     id: 1,
     title: "Orbyt",
-    img:"./orbyt.png",
+    img: cld("orbyt", "w_800"),
     duration: "Jan 2026 - Mar 2026",
     description:
       "Orbyt is a self-hosted LLM API gateway with automatic model fallback, retry policies, and real-time streaming across major AI providers.",
@@ -12,7 +14,7 @@ export const projects = [
   {
     id: 2,
     title: "Draft",
-    img:"./stage-draft.png",
+    img: cld("stage-draft", "w_800"),
     duration: "Dec 2025 - Jan 2026",
     description:
       "Draft is a full-stack blogging platform with AI content generation, infinite scroll, and role-based admin controls.",
@@ -22,7 +24,7 @@ export const projects = [
   {
     id: 3,
     title: "Trendi",
-    img:"./stage-trendi.png",
+    img: cld("stage-trendi", "w_800"),
     duration: "June 2025",
     description:
       "Trendi is a full-stack e-commerce platform with cart management, JWT authentication, and a dedicated admin panel.",
@@ -32,7 +34,7 @@ export const projects = [
   {
     id: 4,
     title: "Agent Force Landing Page",
-    img:"./stage-agentForce.png",
+    img: cld("stage-agentForce", "w_800"),
     duration: "Nov 2025",
     description:
       "AgentForce is a responsive Next.js landing page for AI agent services with dark/light mode and smooth Motion animations.",
@@ -42,7 +44,7 @@ export const projects = [
   {
     id: 5,
     title: "Crypto Tracker",
-    img:"./stage-crypto.png",
+    img: cld("stage-crypto", "w_800"),
     duration: "Nov 2025",
     description:
       "Crypto Tracker is an interactive crypto tracker platform with responsive UI.",

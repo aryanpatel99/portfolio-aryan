@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { cld } from '@/lib/cloudinary';
 
 const CTA = () => {
     useEffect(() => {
@@ -19,7 +20,7 @@ const CTA = () => {
     data-cal-link="aryan-patel-wv5rcz/30min"
     
     data-cal-config='{"layout":"month_view"}' variant="secondary" className="gap-2">
-                        <img src="/logo-a.jpg" alt="aryan" className="size-6 rounded-full" />
+                        <img src={cld("logo-a", "w_80")} alt="aryan" className="size-6 rounded-full" />
                         Book a Free Call
                     </Button>
                 </div>

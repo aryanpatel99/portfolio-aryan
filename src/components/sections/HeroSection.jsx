@@ -11,6 +11,7 @@ import LinkedinIcon from "@/components/ui/linkedin-icon";
 import MailFilledIcon from "@/components/ui/mail-filled-icon";
 import GithubIcon from "@/components/ui/github-icon";
 import { NextJSIcon, NodeJSIcon, ReactIcon, TypeScriptIcon } from "@/icons";
+import { cld } from "@/lib/cloudinary";
 
 const heroStagger = {
     hidden: { opacity: 0 },
@@ -65,7 +66,7 @@ const HeroSection = () => {
                 <img
                     loading="lazy"
                     className="size-24 rounded-full border border-border object-cover"
-                    src="/aizen-pixelated.png"
+                    src={cld("aizen-pixelated", "w_288,h_288,c_fill")}
                     alt="Aryan Patel"
                 />
             </motion.div>

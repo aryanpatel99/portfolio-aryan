@@ -2,35 +2,28 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from "lucide-react";
-import { fallbackContributions } from "../data/fallbackContributions";
+import staticContributions from "../data/contributions.json";
 
 const OpenSourceContributions = () => {
     const [showAll, setShowAll] = useState(false)
-    const [contributions, setContributions] = useState(fallbackContributions)
-    const [loading, setLoading] = useState(true)
+    const [contributions, setContributions] = useState(staticContributions)
 
     useEffect(() => {
-        async function load() {
-            try {
-                setLoading(true)
-                const API_BASE = import.meta.env.VITE_API_BASE || "";
-                const response = await fetch(`${API_BASE}/api/github-contributions`)
-                if (!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`)
-                }
-                const data = await response.json()
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 4000);
 
-                if (data.success && data.contributions.length > 0) {
-                    setContributions(data.contributions)
+        const API_BASE = import.meta.env.VITE_API_BASE || "";
+        fetch(`${API_BASE}/api/github-contributions`, { signal: controller.signal })
+            .then(r => r.ok ? r.json() : null)
+            .then(data => {
+                if (data?.success && data.contributions.length > 0) {
+                    setContributions(data.contributions);
                 }
-            } catch (error) {
-                console.error("Failed to load contributions", error)
-            } finally {
-                setLoading(false)
-            }
-        }
+            })
+            .catch(() => {})
+            .finally(() => clearTimeout(timeout));
 
-        load()
+        return () => { controller.abort(); clearTimeout(timeout); };
     }, [])
 
 
@@ -42,10 +35,7 @@ const OpenSourceContributions = () => {
 
             <h2 className="text-xl mb-4 font-semibold">Open Source Contributions</h2>
 
-            {loading ? (
-                <div>Loading contributions...</div>
-            ) : (
-                <div className="space-y-4">
+            <div className="space-y-4">
                     {displayed.map((c, i) => (
                         <motion.div
                             key={i}
@@ -78,9 +68,8 @@ const OpenSourceContributions = () => {
                         </motion.div>
                     ))}
                 </div>
-            )}
 
-            {!loading && contributions.length > 3 && (
+            {contributions.length > 3 && (
                 <button
                     onClick={() => setShowAll(!showAll)}
                     className="mt-4 text-sm flex items-center gap-1"

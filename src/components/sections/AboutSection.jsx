@@ -5,6 +5,7 @@ import { Marquee, MarqueeContent, MarqueeFade, MarqueeItem } from "@/components/
 import ScrollReveal from "@/components/ScrollReveal";
 import { skills } from "@/data/projectsData";
 import { useResolvedTheme } from "@/hooks/useResolvedTheme";
+import { cld } from "@/lib/cloudinary";
 
 const AboutSection = () => {
     const resolvedTheme = useResolvedTheme();
@@ -16,7 +17,7 @@ const AboutSection = () => {
 
             <div className="mt-8 flex flex-col md:flex-row gap-8">
                 <motion.img
-                    src="/aizen-pixelated.png"
+                    src={cld("aizen-pixelated", "w_720,h_720,c_fill")}
                     loading="lazy"
                     className="size-60 border-2 border-secondary rounded-md object-cover"
                     alt="Aryan Patel"

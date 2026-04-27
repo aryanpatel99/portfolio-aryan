@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { ModeToggle } from './mode-toggle'
 import { motion } from 'motion/react'
+import { cld } from '@/lib/cloudinary'
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Navbar = () => {
       transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <div className='flex items-center space-x-2'>
-        <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full object-cover cursor-pointer' src={"/aizen-pixelated.png"} alt="" onClick={() => navigate("/")} />
+        <img className='size-10 hover:transform hover:scale-119 duration-300 ease-out transition rounded-full object-cover cursor-pointer' src={cld("aizen-pixelated", "w_120,h_120,c_fill")} alt="" onClick={() => navigate("/")} />
         <div>
           <h1 className='text-sm'>Aryan</h1>
           <p className='text-muted-foreground text-xs'>Software Developer</p>

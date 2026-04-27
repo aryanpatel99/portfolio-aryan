@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "fetch-contributions": "node scripts/fetch-contributions.mjs",
+    "prebuild": "node scripts/fetch-contributions.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

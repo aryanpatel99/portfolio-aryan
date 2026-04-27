@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const {Octokit} = require('@octokit/rest');
 require('dotenv').config();
 
 const app = express();
@@ -9,60 +8,65 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
-});
+const USERNAME = "aryanpatel99";
 
-// ===== helper =====
-function formatDate(dateString) {
-  return new Date(dateString).getFullYear().toString();
-}
+const GQL_QUERY = `{
+  user(login: "${USERNAME}") {
+    pullRequests(first: 50, states: MERGED, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      nodes {
+        title
+        url
+        mergedAt
+        repository {
+          owner { login }
+          name
+        }
+      }
+    }
+  }
+}`;
 
-// for simple caching
 let cache = null;
-let lastfetch = 0
-const cacheTime = 1000*60*10 //10 min
+let lastFetch = 0;
+const CACHE_TTL = 1000 * 60 * 10; // 10 min
 
-app.get("/api/github-contributions", async (req, res) => {
+app.get("/api/github-contributions", async (_req, res) => {
   try {
-
-    if(cache && Date.now() - lastfetch < cacheTime){
-      return res.json({success:true, contributions: cache})
+    if (cache && Date.now() - lastFetch < CACHE_TTL) {
+      return res.json({ success: true, contributions: cache });
     }
 
-    const username = req.query.username || "aryanpatel99";
-    const rawLimit = parseInt(req.query.limit || "50");
-    const limit = isNaN(rawLimit) ? 50 : Math.min(rawLimit, 100);
-
-    const { data } = await octokit.request("GET /search/issues", {
-      q: `is:pr author:${username} is:merged`,
-      sort: "updated",
-      order: "desc",
-      per_page: limit,
+    const response = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: GQL_QUERY }),
     });
 
-    const contributions = data.items.map((pr) => {
-      const match = pr.html_url.match(/github\.com\/([^\/]+)\/([^\/]+)\/pull/);
-      const repoOwner = match ? match[1] : "unknown";
+    if (!response.ok) throw new Error(`GitHub GraphQL error: ${response.status}`);
 
-      return {
+    const json = await response.json();
+    const prs = json.data?.user?.pullRequests?.nodes ?? [];
+
+    const contributions = prs
+      .filter((pr) => pr.repository.owner.login !== USERNAME)
+      .map((pr) => ({
         title: pr.title,
-        description: `Contributed to ${repoOwner}`,
-        repository: repoOwner,
-        link: pr.html_url,
-        date: formatDate(pr.closed_at || pr.created_at),
+        description: `${pr.repository.owner.login}/${pr.repository.name}`,
+        repository: pr.repository.owner.login,
+        link: pr.url,
+        date: new Date(pr.mergedAt).getFullYear().toString(),
         state: "merged",
-      };
-    });
+      }));
 
-    const external = contributions.filter((c)=> c.repository !== username);
+    cache = contributions;
+    lastFetch = Date.now();
 
-    cache = external;
-    lastfetch = Date.now();
-
-    res.json({ success: true, contributions:external });
+    res.json({ success: true, contributions });
   } catch (error) {
-    console.error("🔥 GitHub error:", error.status, error.message);
+    console.error("🔥 GitHub error:", error.message);
     res.status(500).json({ success: false, contributions: [] });
   }
 })
