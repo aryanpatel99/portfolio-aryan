@@ -1,0 +1,48 @@
+src/config/resume.js
+  461abcab43209298 2
+src/components/ScrollReveal.jsx
+  461abcab43209298 1-15
+src/components/sections/ProjectsSection.jsx
+  461abcab43209298 1-43
+src/components/sections/AboutSection.jsx
+  461abcab43209298 1-65
+src/components/sections/HeroSection.jsx
+  461abcab43209298 1-125
+src/components/ExperienceCard.jsx
+  461abcab43209298 23-24
+src/components/sections/ExperienceSection.jsx
+  461abcab43209298 1-22
+src/hooks/useResolvedTheme.js
+  461abcab43209298 1-20
+src/components/sections/GitHubActivitySection.jsx
+  461abcab43209298 1,3-5,7-9,11-12,15,28-34,36,50,54
+src/App.jsx
+  461abcab43209298 3,15
+src/pages/Home.jsx
+  461abcab43209298 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "de9affd13fdcc21961de9bd1333125e0de09d3c8",
+  "prompts": {
+    "461abcab43209298": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "66ecadc4-e0af-4c3d-8a6a-7436b48249d6",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 372,
+      "total_deletions": 6,
+      "accepted_lines": 372,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
