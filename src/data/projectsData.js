@@ -1,36 +1,46 @@
 export const projects = [
   {
     id: 1,
+    title: "Orbyt",
+    img:"./orbyt.png",
+    duration: "Jan 2026 - Mar 2026",
+    description:
+      "Orbyt is a self-hosted LLM API gateway with automatic model fallback, retry policies, and real-time streaming across major AI providers.",
+    techStack: ["Node.js", "TypeScript", "Next.js", "Prisma", "PostgreSQL", "Redis", "Turborepo"],
+    liveUrl: "https://openrouter-clone-dashboard.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Draft",
     img:"./stage-draft.png",
     duration: "Dec 2025 - Jan 2026",
     description:
-      "Draft is an interactive blogging platform with responsive UI, and Clerk authentication.",
-    techStack: ["React.js", "Node.js", "TailwindCSS", "Vercel"],
+      "Draft is a full-stack blogging platform with AI content generation, infinite scroll, and role-based admin controls.",
+    techStack: ["React.js", "Node.js", "Express.js", "TanStack Query", "Clerk", "ImageKit"],
     liveUrl: "https://blog-website-ten-teal.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Trendi",
     img:"./stage-trendi.png",
     duration: "June 2025",
     description:
-      "Trendi is an interactive e-commerce platform with responsive UI, and Clerk authentication.",
-    techStack: ["React.js", "Node.js", "TailwindCSS", "Vercel"],
+      "Trendi is a full-stack e-commerce platform with cart management, JWT authentication, and a dedicated admin panel.",
+    techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "TailwindCSS"],
     liveUrl: "https://trend-i-j816.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Agent Force Landing Page",
     img:"./stage-agentForce.png",
     duration: "Nov 2025",
     description:
-      "Agent Force Landing Page is an interactive landing page with responsive UI.",
-    techStack: ["Next.js", "TailwindCSS", "Vercel", "Acternity UI"],
+      "AgentForce is a responsive Next.js landing page for AI agent services with dark/light mode and smooth Motion animations.",
+    techStack: ["Next.js", "TypeScript", "TailwindCSS", "Motion", "Vercel"],
     liveUrl: "https://landing-page-amber-two-40.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Crypto Tracker",
     img:"./stage-crypto.png",
     duration: "Nov 2025",
@@ -38,7 +48,7 @@ export const projects = [
       "Crypto Tracker is an interactive crypto tracker platform with responsive UI.",
     techStack: ["Next.js", "TailwindCSS", "Vercel"],
     liveUrl: "https://crypto-tracker-virid-three.vercel.app/",
-  }
+  },
 
 ];
 

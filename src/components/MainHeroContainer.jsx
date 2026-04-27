@@ -313,7 +313,7 @@ const MainHeroContainer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         {/* ----------------project card---------------- */}
 
-                        {projects.slice(0, 5).map((project, index) => (
+                        {projects.slice(0, 4).map((project, index) => (
                             <motion.div
                                 key={project.id}
                                 initial={{ opacity: 0, y: 25 }}
