@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Container from './components/Container'
+import Home from './pages/Home'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ProjectsPage from './components/ProjectsPage'
 import Experience from './components/Experience'
@@ -12,7 +12,7 @@ const App = () => {
       <div className='bg-background text-foreground min-h-screen'>
         <Navbar/>
         <Routes>
-          <Route path='/' element={<Container />} />
+          <Route path='/' element={<Home />} />
           <Route path='/experience' element={<Experience />} />
           <Route path='/projects' element={<ProjectsPage />} />
           <Route path='/resume' element={<Resume />} />

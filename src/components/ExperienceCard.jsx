@@ -20,9 +20,8 @@ const ExperienceCard = (
             <div className='group'>
                 <div className='flex items-center justify-between mb-6'>
                     <div className='flex items-center gap-4'>
-                        <div className='w-12 h-12 rounded-lg border border-border bg-card flex items-center justify-center overflow-hidden'>
-                            {/* add the company logo here */}
-                            {/* <img src="" alt="" /> */}
+                        <div className='w-12 h-12 rounded-lg border border-border bg-card flex flex-wrap items-center justify-center overflow-hidden'>
+                            <span className="text-xs tracking-tight opacity-50">{company.slice(0, 4)}</span>
                         </div>
                         <div>
                             <div className='flex items-center gap-2'>
