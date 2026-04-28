@@ -1,0 +1,31 @@
+src/data/projectsData.js
+  h_e67cc62ab13a2f 62
+  e739b221534308c7 51,54-61,63
+src/components/Card.jsx
+  e739b221534308c7 18,40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "5fbc97de67b91455dda9c23c73b5ddc417ec51bd",
+  "prompts": {
+    "e739b221534308c7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3e26924-eeb6-4bf3-bac8-08a86feaa504",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 54,
+      "total_deletions": 47,
+      "accepted_lines": 13,
+      "overriden_lines": 1
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
