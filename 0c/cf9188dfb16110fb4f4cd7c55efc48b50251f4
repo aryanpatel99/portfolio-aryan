@@ -1,0 +1,29 @@
+index.html
+  e739b221534308c7 6,12-17,19-21,23-26,28,30-31
+  h_e67cc62ab13a2f 11,18,22,27,29,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "0ccf9188dfb16110fb4f4cd7c55efc48b50251f4",
+  "prompts": {
+    "e739b221534308c7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3e26924-eeb6-4bf3-bac8-08a86feaa504",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 19,
+      "total_deletions": 14,
+      "accepted_lines": 17,
+      "overriden_lines": 2
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
