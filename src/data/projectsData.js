@@ -48,8 +48,18 @@ export const projects = [
     duration: "Nov 2025",
     description:
       "Crypto Tracker is an interactive crypto tracker platform with responsive UI.",
-    techStack: ["Next.js", "TailwindCSS", "Vercel"],
+    techStack: ["Next.js", "TailwindCSS", "CoinGecko API", "TypeScript", "Vercel"],
     liveUrl: "https://crypto-tracker-virid-three.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "Retain AI",
+    img: cld("retain-ai", "w_800"),
+    duration: "Apr 2026",
+    description:
+      "Retain AI turns customer churn data into a LangGraph-powered 30-60-90 retention playbook, streamed live.",
+    techStack: ["Python", "FastAPI", "LangGraph", "Next.js", "ChromaDB", "Groq"],
+    liveUrl: "https://retain-ai-nine.vercel.app/",
   },
 
 ];

@@ -15,8 +15,7 @@ const Card = ({
         <>
             <div className='group bg-card border border-border rounded-lg  overflow-hidden hover:border-zinc-700 transition-all duration-300'>
                 <div className='relative aspect-video overflow-hidden'>
-                    {/* video */}
-                    <img className='group-hover:scale-102 transition-all duration-300 ease-in-out' src={img} alt="projectImg" />
+                    <img className='w-full h-full object-cover object-top group-hover:scale-102 transition-all duration-300 ease-in-out' src={img} alt="projectImg" />
                     <div className='absolute inset-0 bg-gradient-to-t from-black/10 to-transparent'></div>
                 </div>
                 <div className='p-6'>
@@ -38,15 +37,13 @@ const Card = ({
                             </Tooltip>
                         </div>
                     </div>
-                    <p className='text-sm text-muted-foreground leading-relaxed mb-4'>
+                    <p className='text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2'>
                         {description}
                     </p>
                     <div className='flex flex-wrap gap-1.5'>
-                        {/* tech stack */}
                         {techStack.map((stack, index) => (
                             <span key={index} className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>{stack}</span>
                         ))}
-
                     </div>
                 </div>
             </div>
