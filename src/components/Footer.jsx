@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
 
+function ordinal(n) {
+  const s = ["th", "st", "nd", "rd"];
+  const v = n % 100;
+  return n.toLocaleString() + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
 const Footer = () => {
   const [count, setCount] = useState(null);
 
@@ -29,11 +35,11 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-border mt-8 py-6">
-      <div className="max-w-3xl mx-auto px-3 flex justify-center">
-        <p className="text-muted-foreground text-xs">
+      <div className="max-w-3xl mx-auto px-3 flex justify-center ">
+        <p className="text-muted-foreground text-xs border rounded-lg bg-secondary/50 backdrop-blur-sm py-4 px-6">
           {count === null
             ? <span className="opacity-40">—</span>
-            : <><span className="text-foreground font-medium">{count.toLocaleString()}</span> visitor{count !== 1 ? "s" : ""}</>
+            : <>You are the <span className="text-foreground font-medium">{ordinal(count)}</span> visitor</>
           }
         </p>
       </div>
