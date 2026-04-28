@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ProjectsPage from './components/ProjectsPage'
@@ -19,6 +20,7 @@ const App = () => {
           {/* catch 404 */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   )

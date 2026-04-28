@@ -71,6 +71,38 @@ app.get("/api/github-contributions", async (_req, res) => {
   }
 })
 
+async function getRedis(path) {
+  const url   = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+  const res = await fetch(`${url}${path}`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!res.ok) throw new Error(`Upstash ${res.status}`);
+  return (await res.json()).result;
+}
+
+app.get("/api/visitor-count", async (_req, res) => {
+  try {
+    const count = await getRedis("/incr/portfolio_visitor_count");
+    res.json({ success: true, count: count ?? 0 });
+  } catch (error) {
+    console.error("Visitor count error:", error.message);
+    res.status(500).json({ success: false, count: 0 });
+  }
+});
+
+app.get("/api/visitor-count/get", async (_req, res) => {
+  try {
+    const count = await getRedis("/get/portfolio_visitor_count");
+    res.json({ success: true, count: parseInt(count ?? 0, 10) });
+  } catch (error) {
+    console.error("Visitor count error:", error.message);
+    res.status(500).json({ success: false, count: 0 });
+  }
+});
+
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
 });
