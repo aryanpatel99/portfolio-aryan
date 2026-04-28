@@ -7,7 +7,8 @@ function ordinal(n) {
 }
 
 const Footer = () => {
-  const [count, setCount] = useState(null);
+  const cached = localStorage.getItem("portfolio_visitor_count_cache");
+  const [count, setCount] = useState(cached ? parseInt(cached, 10) : null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -24,6 +25,7 @@ const Footer = () => {
       .then(data => {
         if (data?.success && typeof data.count === "number") {
           setCount(data.count);
+          localStorage.setItem("portfolio_visitor_count_cache", data.count);
           if (!alreadyCounted) localStorage.setItem("portfolio_visited", "true");
         }
       })
