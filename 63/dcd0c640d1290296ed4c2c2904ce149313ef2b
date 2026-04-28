@@ -1,0 +1,32 @@
+src/components/Footer.jsx
+  33c6a218cf915e90 1-44
+server/index.js
+  33c6a218cf915e90 74-105
+src/App.jsx
+  33c6a218cf915e90 3,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "63dcd0c640d1290296ed4c2c2904ce149313ef2b",
+  "prompts": {
+    "33c6a218cf915e90": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b945b1a0-7b0b-45fc-a71b-9c5c1ce62ad2",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 99,
+      "total_deletions": 21,
+      "accepted_lines": 87,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
