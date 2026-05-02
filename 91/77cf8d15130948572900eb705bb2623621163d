@@ -1,0 +1,30 @@
+src/components/ScrollToTop.jsx
+  33d423f65c5f7ad4 1-12
+src/App.jsx
+  33d423f65c5f7ad4 9,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "9177cf8d15130948572900eb705bb2623621163d",
+  "prompts": {
+    "33d423f65c5f7ad4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d7a18e72-d78a-4d6b-89e3-f893d996a9e0",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 0,
+      "accepted_lines": 14,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
