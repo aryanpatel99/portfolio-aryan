@@ -6,10 +6,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ProjectsPage from './components/ProjectsPage'
 import Experience from './components/Experience'
 import Resume from './pages/Resume'
+import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className='bg-background text-foreground min-h-screen'>
         <Navbar/>
         <Routes>
