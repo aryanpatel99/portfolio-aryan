@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfolio-aryan-delta.vercel.app/sitemap.xml
