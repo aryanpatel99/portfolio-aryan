@@ -1,0 +1,24 @@
+index.html
+  s_6f67cd3acf9c6a::t_44a3963d265d32 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "50a6cb6dfdaeffe17a2f55d00eaec19ea4aed9e3",
+  "prompts": {},
+  "humans": {
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_6f67cd3acf9c6a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8610a71d-d3dc-4a07-9d5f-e15d2330a279",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
