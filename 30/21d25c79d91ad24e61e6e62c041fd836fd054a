@@ -1,0 +1,17 @@
+src/main.jsx
+  h_ccbfe03d15f891 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "3021d25c79d91ad24e61e6e62c041fd836fd054a",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
