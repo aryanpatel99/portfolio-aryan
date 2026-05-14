@@ -5,7 +5,7 @@ import 'react-activity-calendar/tooltips.css';
 
 import { ThemeProvider } from "./components/theme-provider"
 import { StrictMode } from 'react';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
