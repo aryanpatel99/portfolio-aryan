@@ -1,5 +1,13 @@
 [
   {
+    "title": "Add new Tableau workbook for Blinkit Analysis G19",
+    "description": "Arya756/SecC_G19_BlinkitDataAnalysis",
+    "repository": "Arya756",
+    "link": "https://github.com/Arya756/SecC_G19_BlinkitDataAnalysis/pull/3",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
     "title": "Add data cleaning notebook and cleaned dataset",
     "description": "Arya756/SecC_G19_BlinkitDataAnalysis",
     "repository": "Arya756",
