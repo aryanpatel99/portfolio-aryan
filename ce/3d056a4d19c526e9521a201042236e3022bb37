@@ -1,0 +1,73 @@
+src/App.jsx
+  h_ccbfe03d15f891 27
+  s_b9fe754bdbd584::t_10b3e60c90a648 10
+src/components/Experience.jsx
+  h_ccbfe03d15f891 163
+src/components/Navbar.jsx
+  s_b9fe754bdbd584::t_80c8a3cbc5139d 51
+  h_ccbfe03d15f891 6,12,17,43-50,52-57
+components.json
+  s_b9fe754bdbd584::t_9a64225a718fb3 22
+src/components/ui/flickering-grid.jsx
+  s_b9fe754bdbd584::t_aa10d38c779a4c 1-5,7-220
+  h_ccbfe03d15f891 6
+src/components/ui/floating-dock.jsx
+  s_b9fe754bdbd584::t_9a64225a718fb3 1-10,12-13,40-65,73-87,89,91,94,96,99-103,105-120,122-123,136-143,146-185,187-191,193-209,211-212
+  h_ccbfe03d15f891 70
+  s_b9fe754bdbd584::t_d1c5c80f6d0715 88,90,92,95
+  s_b9fe754bdbd584::t_92636c7ac7ecf3 97-98
+  s_b9fe754bdbd584::t_48a5d2c0e31f73 124-127,132-135
+  s_b9fe754bdbd584::t_cba163c3cf0eb5 144-145
+  s_b9fe754bdbd584::t_ab391c6fd90b8a 121
+  s_b9fe754bdbd584::t_ef90cf35dd5197 93
+  s_b9fe754bdbd584::t_1188d1fe163b2a 186
+  s_b9fe754bdbd584::t_55a47d2664b7a3 128-131
+  s_b9fe754bdbd584::t_019ef6591bc8d7 104
+  s_b9fe754bdbd584::t_89e77759f94b5a 192
+  s_b9fe754bdbd584::t_511900e572002a 66-69,71-72
+  s_b9fe754bdbd584::t_953a538aa3c899 11,14-39
+  s_b9fe754bdbd584::t_ead307f098403e 210
+src/components/floating-dock-demo.jsx
+  s_b9fe754bdbd584::t_bbaaff9b0f860e 64
+  s_b9fe754bdbd584::t_48cf4215e56ce3 49
+  s_b9fe754bdbd584::t_f3a5f3912f78da 3,5,8,27-40,45,47,51,53,55,58,60,62,66-67,69-72,74,77,87
+  s_b9fe754bdbd584::t_b37e3720cac65f 1,4,9-11,16-21,23-26
+  h_ccbfe03d15f891 22
+  s_b9fe754bdbd584::t_bdc5ea982d1f2a 79-86
+  s_b9fe754bdbd584::t_5cd8a7b7dcb2d7 12-15
+  s_b9fe754bdbd584::t_9a64225a718fb3 2,6-7,41-44,46,48,50,52,54,56-57,59,61,63,65,68,73,75-76,78,88-90
+package.json
+  s_b9fe754bdbd584::t_aec4a4b3fcf9d1 38
+  s_b9fe754bdbd584::t_9a64225a718fb3 18,26
+src/index.css
+  s_b9fe754bdbd584::t_5467116f9bbe7f 53-55
+  s_b9fe754bdbd584::t_a75c43d8eea437 4,6,9,17,92,125-131,133-138,140,142,147-186,188-198,200-259,279
+  s_b9fe754bdbd584::t_034ba7fc110ac9 90-91
+src/components/sections/HeroSection.jsx
+  s_b9fe754bdbd584::t_ee7ef1aeb01283 65,67,83-84,86-88
+  h_ccbfe03d15f891 82,85,90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "ce3d056a4d19c526e9521a201042236e3022bb37",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_b9fe754bdbd584": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f892728e-aee5-427f-bf44-ea13111a8db4",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
