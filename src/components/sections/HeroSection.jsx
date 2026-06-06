@@ -62,16 +62,9 @@ const HeroSection = () => {
 
     return (
         <motion.div variants={heroStagger} initial="hidden" animate="visible">
-            <motion.div className="relative inline-block" variants={heroChild}>
-                <img
-                    loading="lazy"
-                    className="size-24 rounded-full border border-border object-cover"
-                    src={cld("aizen-pixelated", "w_288,h_288,c_fill")}
-                    alt="Aryan Patel"
-                />
-            </motion.div>
+            <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center md:justify-between">
 
-            <motion.div className="mt-8 flex flex-col gap-2" variants={heroChild}>
+            <motion.div className="flex flex-1 flex-col gap-2" variants={heroChild}>
                 <h1 className="text-4xl font-semibold">
                     Hi I'm Aryan -{" "}
                     <span className="text-muted-foreground font-md">A Full Stack Developer.</span>
@@ -85,6 +78,16 @@ const HeroSection = () => {
                     <span>Focused on delivering seamless and intuitive user experiences.</span>
                 </div>
             </motion.div>
+
+            <motion.div className="relative inline-block shrink-0" variants={heroChild}>
+                <img
+                    loading="lazy"
+                    className="size-28 rounded-full border-3 border-border object-cover md:size-36"
+                    src={cld("aizen-pixelated", "w_320,h_320,c_fill")}
+                    alt="Aryan Patel"
+                />
+            </motion.div>
+            </div>
 
             <motion.div className="mt-8 flex gap-4" variants={heroChild}>
                 <Button

@@ -7,6 +7,7 @@ import ProjectsPage from './components/ProjectsPage'
 import Experience from './components/Experience'
 import Resume from './pages/Resume'
 import ScrollToTop from './components/ScrollToTop'
+import FloatingDockDemo from './components/floating-dock-demo'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
+        <FloatingDockDemo />
       </div>
     </BrowserRouter>
   )

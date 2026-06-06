@@ -160,7 +160,7 @@ const Experience = () => {
                             </div>
 
 
-                            <div className='h-px bg-gradient-to-r from-transparent via-border to-transparent mt-16'></div>
+                            {/* <div className='h-px bg-gradient-to-r from-transparent via-border to-transparent mt-16'></div> */}
 
 
                         </motion.div>
