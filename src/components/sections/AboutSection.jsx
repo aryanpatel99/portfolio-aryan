@@ -17,7 +17,7 @@ const AboutSection = () => {
 
             <div className="mt-8 flex flex-col md:flex-row gap-8">
                 <motion.img
-                    src={cld("aizen-pixelated", "w_720,h_720,c_fill")}
+                    src={cld("not_zenin", "w_720,h_720,c_fill")}
                     loading="lazy"
                     className="size-60 border-2 border-secondary rounded-md object-cover"
                     alt="Aryan Patel"

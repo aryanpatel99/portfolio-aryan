@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { ModeToggle } from './mode-toggle'
+// import { Link, NavLink, useNavigate } from 'react-router-dom'
+// import { ModeToggle } from './mode-toggle'
 import { motion } from 'motion/react'
-import { cld } from '@/lib/cloudinary'
+// import { cld } from '@/lib/cloudinary'
 import { FlickeringGrid } from './ui/flickering-grid'
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <motion.div
       className='relative w-full flex justify-between items-center py-4 px-3  top-0 z-[999] backdrop-blur-md bg-background/60'

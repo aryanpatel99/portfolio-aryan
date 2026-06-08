@@ -83,7 +83,7 @@ const HeroSection = () => {
                 <img
                     loading="lazy"
                     className="size-28 rounded-full border-3 border-border object-cover md:size-36"
-                    src={cld("aizen-pixelated", "w_320,h_320,c_fill")}
+                    src={cld("not_zenin", "w_320,h_320,c_fill")}
                     alt="Aryan Patel"
                 />
             </motion.div>
