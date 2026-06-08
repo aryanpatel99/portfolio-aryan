@@ -1,0 +1,37 @@
+src/components/Navbar.jsx
+  h_ccbfe03d15f891 2-3,5,9
+src/config/resume.js
+  h_ccbfe03d15f891 2
+src/components/CTA.jsx
+  h_ccbfe03d15f891 17-29,35
+  s_b9fe754bdbd584::t_c63d2b46cb57f4 6
+  s_b9fe754bdbd584::t_cc8b12939154bf 16
+src/components/sections/AboutSection.jsx
+  h_ccbfe03d15f891 20
+src/components/sections/HeroSection.jsx
+  s_b9fe754bdbd584::t_1f4afbcebed496 86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "7413a11f123e349d35e9a1061c7e6b452a8cdd07",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_b9fe754bdbd584": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f892728e-aee5-427f-bf44-ea13111a8db4",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
