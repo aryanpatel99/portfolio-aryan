@@ -1,0 +1,19 @@
+src/components/floating-dock-demo.jsx
+  h_ccbfe03d15f891 81
+src/icons/index.jsx
+  h_ccbfe03d15f891 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "3f8a2b177c5c0b4949e786f42768b52444758540",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
