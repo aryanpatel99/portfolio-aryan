@@ -78,7 +78,7 @@ export default function FloatingDockDemo() {
   return (
     <div
       className={cn(
-        "fixed bottom-6 left-1/2 z-[999] -translate-x-1/2 transition-all duration-300 ease-out",
+        "fixed bottom-6 md:left-1/2 md:right-auto right-6 z-[999] md:-translate-x-1/2 transition-all duration-300 ease-out",
         hidden
           ? "pointer-events-none translate-y-28 opacity-0"
           : "translate-y-0 opacity-100"
