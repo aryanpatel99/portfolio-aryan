@@ -1,0 +1,17 @@
+src/components/ScrollReveal.jsx
+  h_ccbfe03d15f891 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "ffdd7dd478f72294bc7f022e271ee358a3cbe437",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
