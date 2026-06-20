@@ -34,7 +34,7 @@ const CTA = () => {
                         data-cal-link="aryan-patel-wv5rcz/30min"
 
                         data-cal-config='{"layout":"month_view"}' variant="secondary" className="gap-2">
-                        <img src={cld("logo-a", "w_80")} alt="aryan" className="size-6 rounded-full" />
+                        <img src={cld("not_zenin", "w_80")} alt="aryan" className="size-6 rounded-full" />
                         Book a Free Call
                     </Button>
                 </div>
