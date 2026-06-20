@@ -1,0 +1,34 @@
+src/components/CTA.jsx
+  h_ccbfe03d15f891 37
+  s_620ed682799ee3::t_4ba8d5419e1821 48
+src/components/Footer.jsx
+  h_ccbfe03d15f891 39,41
+src/components/ExperienceCard.jsx
+  h_ccbfe03d15f891 23,60
+src/components/Experience.jsx
+  h_ccbfe03d15f891 1-7,28,30,35-54,59-67,69-73,77,88-92,98-99,101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "d52a8579f4c246231b21df3f0e032a0b1ca87011",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_620ed682799ee3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fee7da1b-9022-4323-b2bc-47f29011682c",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
