@@ -36,12 +36,12 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="border-t border-neutral-800 mt-8 py-6">
+    <footer className="border-t border-neutral-300 dark:border-neutral-800 mt-8 py-6">
       <div className="max-w-3xl mx-auto px-3 flex justify-center ">
-        <p className="text-muted-foreground text-xs border border-neutral-800 rounded-lg bg-secondary/50 backdrop-blur-sm py-4 px-6">
+        <p className="text-muted-foreground text-xs border border-neutral-300 dark:border-neutral-800 rounded-lg bg-secondary/50 backdrop-blur-sm py-4 px-6">
           {count === null
             ? <span className="opacity-40">—</span>
-            : <>You are the <span className="text-foreground font-medium">{ordinal(count)}</span> visitor</>
+            : <>You are the <span className="text-foreground font-semibold text-md">{ordinal(count)}</span> visitor</>
           }
         </p>
       </div>
