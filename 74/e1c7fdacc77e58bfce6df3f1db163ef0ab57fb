@@ -1,0 +1,41 @@
+src/data/projectsData.js
+  s_620ed682799ee3::t_3f27655fada9cc 60
+  s_620ed682799ee3::t_3c828352615160 50
+  s_620ed682799ee3::t_9b206feb553e08 40
+  s_620ed682799ee3::t_cd47770ce80215 30
+  s_620ed682799ee3::t_35de3397b9dcca 37
+  s_620ed682799ee3::t_289d3d420a2d48 5-9,11-13
+  s_620ed682799ee3::t_9fc01625f11e8d 20
+  s_620ed682799ee3::t_8de9b0e66bf408 70
+  h_ccbfe03d15f891 10
+src/components/sections/ProjectsSection.jsx
+  h_ccbfe03d15f891 9-11,14,44
+src/components/Card.jsx
+  h_ccbfe03d15f891 16,45
+src/components/ExperienceCard.jsx
+  h_ccbfe03d15f891 23,60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "74e1c7fdacc77e58bfce6df3f1db163ef0ab57fb",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_620ed682799ee3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fee7da1b-9022-4323-b2bc-47f29011682c",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
