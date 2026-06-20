@@ -6,10 +6,12 @@ import Card from "@/components/Card";
 import ScrollReveal from "@/components/ScrollReveal";
 import { projects } from "@/data/projectsData";
 
-const ProjectsSection = () => (
+const ProjectsSection = () => {
+    const totalProjects = projects.length;
+    return (
     <ScrollReveal className="mt-8">
         <p className="text-muted-foreground text-sm opacity-50">Featured</p>
-        <h2 className="text-2xl font-bold">Projects</h2>
+        <h2 className="text-2xl font-bold">Projects <span className="text-muted-foreground text-base font-normal">({totalProjects})</span></h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             {projects.slice(0, 4).map((project, index) => (
@@ -38,6 +40,7 @@ const ProjectsSection = () => (
             </NavLink>
         </div>
     </ScrollReveal>
-);
+    );
+}
 
 export default ProjectsSection;

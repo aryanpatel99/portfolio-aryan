@@ -2,12 +2,22 @@ import { cld } from "@/lib/cloudinary";
 
 export const projects = [
   {
+    id: 0,
+    title: "Lumin UI",
+    img: cld("LuminUi", "w_800"),
+    duration: "June 2026",
+    description:
+      "Lumin UI is a growing collection of animated, accessible React components.",
+    techStack: ["Next.js", "React", "TypeScript", "TailwindCSS", "Motion", "shadcn/ui"],
+    liveUrl: "https://luminui.vercel.app/",
+  },
+  {
     id: 1,
     title: "Orbyt",
     img: cld("orbyt", "w_800"),
     duration: "Jan 2026 - Mar 2026",
     description:
-      "Orbyt is a self-hosted LLM API gateway with automatic model fallback, retry policies, and real-time streaming across major AI providers.",
+      "Self-hosted LLM gateway with model fallback and real-time streaming.",
     techStack: ["Node.js", "TypeScript", "Next.js", "Prisma", "PostgreSQL", "Redis", "Turborepo"],
     liveUrl: "https://openrouter-clone-dashboard.vercel.app/",
   },
@@ -17,17 +27,17 @@ export const projects = [
     img: cld("stage-draft", "w_800"),
     duration: "Dec 2025 - Jan 2026",
     description:
-      "Draft is a full-stack blogging platform with AI content generation, infinite scroll, and role-based admin controls.",
+      "Blogging platform with AI content generation and role-based access.",
     techStack: ["React.js", "Node.js", "Express.js", "TanStack Query", "Clerk", "ImageKit"],
     liveUrl: "https://blog-website-ten-teal.vercel.app/",
   },
   {
     id: 3,
     title: "Trendi",
-    img: cld("stage-trendi", "w_800"),
+    img: cld("stage-latest", "w_800"),
     duration: "June 2025",
     description:
-      "Trendi is a full-stack e-commerce platform with cart management, JWT authentication, and a dedicated admin panel.",
+      "E-commerce app with cart management, JWT auth, and an admin panel.",
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "TailwindCSS"],
     liveUrl: "https://trend-i-j816.vercel.app/",
   },
@@ -37,7 +47,7 @@ export const projects = [
     img: cld("stage-agentForce", "w_800"),
     duration: "Nov 2025",
     description:
-      "AgentForce is a responsive Next.js landing page for AI agent services with dark/light mode and smooth Motion animations.",
+      "Landing page for AI agent services with dark mode and Motion animations.",
     techStack: ["Next.js", "TypeScript", "TailwindCSS", "Motion", "Vercel"],
     liveUrl: "https://landing-page-amber-two-40.vercel.app/",
   },
@@ -47,7 +57,7 @@ export const projects = [
     img: cld("stage-crypto", "w_800"),
     duration: "Nov 2025",
     description:
-      "Crypto Tracker is an interactive crypto tracker platform with responsive UI.",
+      "Real-time dashboard for tracking crypto prices and market trends.",
     techStack: ["Next.js", "TailwindCSS", "CoinGecko API", "TypeScript", "Vercel"],
     liveUrl: "https://crypto-tracker-virid-three.vercel.app/",
   },
@@ -57,7 +67,7 @@ export const projects = [
     img: cld("retain-ai", "w_800"),
     duration: "Apr 2026",
     description:
-      "Retain AI turns customer churn data into a LangGraph-powered 30-60-90 retention playbook, streamed live.",
+      "Turns churn data into a LangGraph-powered retention playbook, streamed live.",
     techStack: ["Python", "FastAPI", "LangGraph", "Next.js", "ChromaDB", "Groq"],
     liveUrl: "https://retain-ai-nine.vercel.app/",
   },

@@ -20,7 +20,7 @@ const ExperienceCard = (
             <div className='group'>
                 <div className='flex items-center justify-between mb-6'>
                     <div className='flex items-center gap-4'>
-                        <div className='w-12 h-12 rounded-lg border border-border bg-card flex flex-wrap items-center justify-center overflow-hidden'>
+                        <div className='w-12 h-12 rounded-lg border border-border bg-secondary flex flex-wrap items-center justify-center overflow-hidden'>
                             <span className="text-xs tracking-tight opacity-50">{company.slice(0, 4)}</span>
                         </div>
                         <div>
@@ -57,7 +57,7 @@ const ExperienceCard = (
                 {/* skills */}
                 <div className='flex flex-wrap gap-2 mb-8'>
                     {skills.map((skill,index)=>(
-                        <div key={index} className='bg-card border border-border rounded-lg px-2.5 py-1 text-xs font-medium hover:border-zinc-600 transition-colors '>{skill}</div>
+                        <div key={index} className='bg-card border border-border rounded-full px-2.5 py-1 text-xs font-medium hover:border-neutral-600 bg-secondary transition-colors '>{skill}</div>
                     ))}
                 </div>
 

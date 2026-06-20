@@ -13,7 +13,7 @@ const Card = ({
 ) => {
     return (
         <>
-            <div className='group bg-card border border-border rounded-lg  overflow-hidden hover:border-zinc-700 transition-all duration-300'>
+            <div className='group bg-card border border-border rounded-lg  overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-300'>
                 <div className='relative aspect-video overflow-hidden'>
                     <img className='w-full h-full object-cover object-top group-hover:scale-102 transition-all duration-300 ease-in-out' src={img} alt="projectImg" />
                     <div className='absolute inset-0 bg-gradient-to-t from-black/10 to-transparent'></div>
@@ -42,7 +42,7 @@ const Card = ({
                     </p>
                     <div className='flex flex-wrap gap-1.5'>
                         {techStack.map((stack, index) => (
-                            <span key={index} className='px-2 py-1 text-xs  bg-secondary border border-border rounded text-secondary-foreground'>{stack}</span>
+                            <span key={index} className='px-2 py-1 text-xs  bg-secondary border border-border rounded-full hover:bg-primary/20 transition-all duration-200 text-secondary-foreground'>{stack}</span>
                         ))}
                     </div>
                 </div>
