@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import staticContributions from "@/data/contributions.json";
 
 const USERNAME = "aryanpatel99";
 
@@ -18,29 +19,44 @@ const GQL_QUERY = `{
   }
 }`;
 
-let cache = null;
-let lastFetch = 0;
-const CACHE_TTL = 1000 * 60 * 10; // 10 min
-
 export async function GET() {
-  try {
-    if (cache && Date.now() - lastFetch < CACHE_TTL) {
-      return NextResponse.json({ success: true, contributions: cache });
-    }
+  const token = process.env.GITHUB_TOKEN;
 
+  if (!token) {
+    // Fall back to pre-bundled data if no token configured
+    return NextResponse.json({
+      success: true,
+      contributions: staticContributions,
+      source: "fallback",
+    });
+  }
+
+  try {
+    // Native Next.js ISR: cached with 1-hour background revalidation and cache tag
     const response = await fetch("https://api.github.com/graphql", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
+        "User-Agent": "portfolio-aryan",
       },
       body: JSON.stringify({ query: GQL_QUERY }),
+      next: {
+        revalidate: 3600, // Revalidate in background every 1 hour
+        tags: ["github-contributions"],
+      },
     });
 
-    if (!response.ok)
+    if (!response.ok) {
       throw new Error(`GitHub GraphQL error: ${response.status}`);
+    }
 
     const json = await response.json();
+
+    if (json.errors) {
+      throw new Error(json.errors[0]?.message || "GraphQL error");
+    }
+
     const prs = json.data?.user?.pullRequests?.nodes ?? [];
 
     const contributions = prs
@@ -54,15 +70,19 @@ export async function GET() {
         state: "merged",
       }));
 
-    cache = contributions;
-    lastFetch = Date.now();
-
-    return NextResponse.json({ success: true, contributions });
+    return NextResponse.json({
+      success: true,
+      contributions: contributions.length > 0 ? contributions : staticContributions,
+      source: "github",
+    });
   } catch (error) {
-    console.error("🔥 GitHub error:", error.message);
-    return NextResponse.json(
-      { success: false, contributions: [] },
-      { status: 500 }
-    );
+    console.error("GitHub contributions fetch error:", error.message);
+    // Graceful fallback to static contributions rather than blank screen
+    return NextResponse.json({
+      success: true,
+      contributions: staticContributions,
+      source: "fallback-on-error",
+      error: error.message,
+    });
   }
 }

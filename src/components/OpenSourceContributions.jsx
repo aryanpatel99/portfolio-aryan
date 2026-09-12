@@ -34,12 +34,17 @@ const OpenSourceContributions = () => {
         // <div className="p-6 rounded-lg mt-20 ">
         <div className="p-6 rounded-lg mt-20 border border-secondary  drop-shadow-xs   ">
 
-            <h2 className="text-xl mb-4 font-semibold">Open Source Contributions</h2>
+            <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold">Open Source Contributions</h2>
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-secondary text-muted-foreground border border-border/50">
+                    {contributions.length} merged PRs
+                </span>
+            </div>
 
             <div className="space-y-4">
                     {displayed.map((c, i) => (
                         <motion.div
-                            key={i}
+                            key={c.link || i}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-30px" }}
