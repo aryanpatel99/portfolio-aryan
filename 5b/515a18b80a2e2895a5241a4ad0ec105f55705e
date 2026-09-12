@@ -1,0 +1,31 @@
+src/app/api/github-contributions/route.js
+  h_ccbfe03d15f891 2,23-32,34-35,39,41,44-47,50,52,55-59,73-77,79-86
+src/app/api/revalidate-contributions/route.js
+  h_ccbfe03d15f891 1-53
+src/app/api/visitor-count/route.js
+  h_ccbfe03d15f891 3,7,11,13-16,19,21-49,53
+src/components/Footer.jsx
+  h_ccbfe03d15f891 3-5,8,12-18
+src/components/OpenSourceContributions.jsx
+  h_ccbfe03d15f891 37-42,47
+src/components/sections/HeroSection.jsx
+  h_ccbfe03d15f891 17-18,66,72-84
+src/components/ui/number-ticker.jsx
+  h_ccbfe03d15f891 1-65
+src/hooks/useVisitorCount.js
+  h_ccbfe03d15f891 1-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5b515a18b80a2e2895a5241a4ad0ec105f55705e",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
