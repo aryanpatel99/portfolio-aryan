@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import { motion } from "motion/react";
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Card from "@/components/Card";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -35,9 +37,9 @@ const ProjectsSection = () => {
         </div>
 
         <div className="flex justify-center mt-4">
-            <NavLink to="/projects">
+            <Link href="/projects">
                 <Button variant="outline">See More Projects</Button>
-            </NavLink>
+            </Link>
         </div>
     </ScrollReveal>
     );

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ExperienceCard from "@/components/ExperienceCard";

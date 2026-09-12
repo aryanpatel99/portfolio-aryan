@@ -1,3 +1,5 @@
+"use client";
+
 import { forwardRef, useImperativeHandle, useCallback } from "react";
 import { motion, useAnimate } from "motion/react";
 

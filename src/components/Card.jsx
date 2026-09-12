@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 import WorldIcon from './ui/world-icon'

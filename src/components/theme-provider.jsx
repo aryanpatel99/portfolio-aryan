@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useEffect, useState } from "react"
 
 const initialState = {
@@ -14,7 +16,7 @@ export function ThemeProvider({
     ...props
 }) {
     const [theme, setTheme] = useState(
-        () => localStorage.getItem(storageKey) || defaultTheme
+        () => (typeof window !== "undefined" ? localStorage.getItem(storageKey) : null) || defaultTheme
     )
 
     useEffect(() => {

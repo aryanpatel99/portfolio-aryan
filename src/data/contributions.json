@@ -1,5 +1,61 @@
 [
   {
+    "title": "implement global command search and refine dashboard layout and navig…",
+    "description": "Abhayanthk/aegis",
+    "repository": "Abhayanthk",
+    "link": "https://github.com/Abhayanthk/aegis/pull/23",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
+    "title": "feat: implement modular investigation stage UI system and human decis…",
+    "description": "Abhayanthk/aegis",
+    "repository": "Abhayanthk",
+    "link": "https://github.com/Abhayanthk/aegis/pull/21",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
+    "title": "implemented stage progression tracking",
+    "description": "Abhayanthk/aegis",
+    "repository": "Abhayanthk",
+    "link": "https://github.com/Abhayanthk/aegis/pull/16",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
+    "title": " implemented investigation dashboard",
+    "description": "Abhayanthk/aegis",
+    "repository": "Abhayanthk",
+    "link": "https://github.com/Abhayanthk/aegis/pull/10",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
+    "title": "Frontend",
+    "description": "Abhayanthk/aegis",
+    "repository": "Abhayanthk",
+    "link": "https://github.com/Abhayanthk/aegis/pull/6",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
+    "title": "Created frontend strucutre",
+    "description": "Abhayanthk/aegis",
+    "repository": "Abhayanthk",
+    "link": "https://github.com/Abhayanthk/aegis/pull/3",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
+    "title": "fix: correct spelling of Vengeance in features section heading",
+    "description": "Ashutoshx7/VengeanceUI",
+    "repository": "Ashutoshx7",
+    "link": "https://github.com/Ashutoshx7/VengeanceUI/pull/56",
+    "date": "2026",
+    "state": "merged"
+  },
+  {
     "title": "Add new Tableau workbook for Blinkit Analysis G19",
     "description": "Arya756/SecC_G19_BlinkitDataAnalysis",
     "repository": "Arya756",
@@ -17,9 +73,9 @@
   },
   {
     "title": "Fix/howitworks align",
-    "description": "KartikLabhshetwar/screenshot-studio",
-    "repository": "KartikLabhshetwar",
-    "link": "https://github.com/KartikLabhshetwar/screenshot-studio/pull/62",
+    "description": "opennookorg/screenshot-studio",
+    "repository": "opennookorg",
+    "link": "https://github.com/opennookorg/screenshot-studio/pull/62",
     "date": "2026",
     "state": "merged"
   },
@@ -29,14 +85,6 @@
     "repository": "firstcontributions",
     "link": "https://github.com/firstcontributions/first-contributions/pull/110348",
     "date": "2026",
-    "state": "merged"
-  },
-  {
-    "title": "feat: added hollow butterfly pattern",
-    "description": "admirerr/DSA-Collection",
-    "repository": "admirerr",
-    "link": "https://github.com/admirerr/DSA-Collection/pull/161",
-    "date": "2025",
     "state": "merged"
   }
 ]

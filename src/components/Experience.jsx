@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import Link from "next/link";
 import { TooltipContent, Tooltip, TooltipTrigger } from "./ui/tooltip";
 import { experiences, skills } from "@/data/projectsData";
 import ExperienceCard from "./ExperienceCard";
@@ -34,7 +36,7 @@ const Experience = () => {
             >
                 <motion.div className="pl-4" variants={fadeUp}>
                     <Link
-                        to={"/"}
+                        href="/"
                         className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                         <svg

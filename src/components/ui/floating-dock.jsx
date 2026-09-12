@@ -8,7 +8,7 @@
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "motion/react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { useRef, useState } from "react";
 
@@ -26,7 +26,7 @@ const DockLink = ({ href, onClick, className, children, ...props }) => {
   }
   if (href && href.startsWith("/")) {
     return (
-      <Link to={href} className={className} {...props}>
+      <Link href={href} className={className} {...props}>
         {children}
       </Link>
     );

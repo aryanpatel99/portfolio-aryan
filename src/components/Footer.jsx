@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 function ordinal(n) {
@@ -7,18 +9,17 @@ function ordinal(n) {
 }
 
 const Footer = () => {
-  const cached = localStorage.getItem("portfolio_visitor_count_cache");
+  const cached = typeof window !== "undefined" ? localStorage.getItem("portfolio_visitor_count_cache") : null;
   const [count, setCount] = useState(cached ? parseInt(cached, 10) : null);
 
   useEffect(() => {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 4000);
-    const API_BASE = import.meta.env.VITE_API_BASE || "";
 
     const alreadyCounted = localStorage.getItem("portfolio_visited");
     const endpoint = alreadyCounted
-      ? `${API_BASE}/api/visitor-count/get`
-      : `${API_BASE}/api/visitor-count`;
+      ? `/api/visitor-count/get`
+      : `/api/visitor-count`;
 
     fetch(endpoint, { signal: controller.signal })
       .then(r => r.ok ? r.json() : null)

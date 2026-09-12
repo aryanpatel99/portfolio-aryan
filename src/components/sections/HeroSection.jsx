@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useRef } from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import HeroButton from "@/components/HeroButton";
 import FileDescriptionIcon from "@/components/ui/file-description-icon";
 import SendIcon from "@/components/ui/send-icon";
@@ -58,7 +60,7 @@ const SOCIALS = [
 const HeroSection = () => {
     const fileIconRef = useRef(null);
     const sendIconRef = useRef(null);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     return (
         <motion.div variants={heroStagger} initial="hidden" animate="visible">
@@ -91,7 +93,7 @@ const HeroSection = () => {
 
             <motion.div className="mt-8 flex gap-4" variants={heroChild}>
                 <Button
-                    onClick={() => navigate("/resume")}
+                    onClick={() => router.push("/resume")}
                     variant="outline"
                     onMouseEnter={() => fileIconRef.current?.startAnimation()}
                     onMouseLeave={() => fileIconRef.current?.stopAnimation()}

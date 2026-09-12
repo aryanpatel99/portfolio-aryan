@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
@@ -12,8 +14,7 @@ const OpenSourceContributions = () => {
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 4000);
 
-        const API_BASE = import.meta.env.VITE_API_BASE || "";
-        fetch(`${API_BASE}/api/github-contributions`, { signal: controller.signal })
+        fetch(`/api/github-contributions`, { signal: controller.signal })
             .then(r => r.ok ? r.json() : null)
             .then(data => {
                 if (data?.success && data.contributions.length > 0) {
