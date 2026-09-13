@@ -1,0 +1,23 @@
+package-lock.json
+  h_ccbfe03d15f891 20,1826-1851,2125-2136
+package.json
+  h_ccbfe03d15f891 23
+src/app/layout.jsx
+  h_ccbfe03d15f891 2,9,66-74
+src/components/SmoothScroll.jsx
+  h_ccbfe03d15f891 1-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "56bf5b34b950f959712ebc42ab1b7f518dabc22c",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  }
+}
