@@ -1,10 +1,12 @@
 import "@/index.css";
+import "locomotive-scroll/dist/locomotive-scroll.css";
 import "react-activity-calendar/tooltips.css";
 import { Hanken_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingDockDemo from "@/components/floating-dock-demo";
+import SmoothScroll from "@/components/SmoothScroll";
 import { Analytics } from "@vercel/analytics/react";
 
 const hankenGrotesk = Hanken_Grotesk({
@@ -61,13 +63,15 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${hankenGrotesk.variable} font-sans`}>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <div className="bg-background text-foreground min-h-screen">
-            <Navbar />
-            {children}
-            <Footer />
-            <FloatingDockDemo />
-          </div>
-          <Analytics />
+          <SmoothScroll>
+            <div className="bg-background text-foreground min-h-screen">
+              <Navbar />
+              {children}
+              <Footer />
+              <FloatingDockDemo />
+            </div>
+            <Analytics />
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
