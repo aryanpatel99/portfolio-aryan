@@ -16,7 +16,7 @@ export default function FloatingDockDemo() {
   //   0px              -> hides as the footer touches the bottom of the screen
   //   negative         -> hides later (footer scrolls into view first)
   useEffect(() => {
-    const footer = document.querySelector("footer");
+    const footer = document.getElementById("site-footer");
     if (!footer) return;
 
     const observer = new IntersectionObserver(

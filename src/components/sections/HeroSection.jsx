@@ -14,8 +14,6 @@ import MailFilledIcon from "@/components/ui/mail-filled-icon";
 import GithubIcon from "@/components/ui/github-icon";
 import { NextJSIcon, NodeJSIcon, ReactIcon, TypeScriptIcon } from "@/icons";
 import { cld } from "@/lib/cloudinary";
-import { useVisitorCount } from "@/hooks/useVisitorCount";
-import NumberTicker from "@/components/ui/number-ticker";
 
 const heroStagger = {
     hidden: { opacity: 0 },
@@ -63,28 +61,15 @@ const HeroSection = () => {
     const fileIconRef = useRef(null);
     const sendIconRef = useRef(null);
     const router = useRouter();
-    const { count: visitorCount } = useVisitorCount();
 
     return (
         <motion.div variants={heroStagger} initial="hidden" animate="visible">
             <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center md:justify-between">
 
             <motion.div className="flex flex-1 flex-col gap-3" variants={heroChild}>
-                <div className="inline-flex items-center gap-2 self-start rounded-full border border-neutral-300 dark:border-neutral-800 bg-secondary/70 px-3 py-1 text-xs font-medium text-secondary-foreground backdrop-blur-xs shadow-2xs">
-                    <span className="relative flex h-2 w-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                        <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-                    </span>
-                    <span>Available for work</span>
-                    <span className="text-muted-foreground/40">•</span>
-                    <span className="text-muted-foreground flex items-center gap-1">
-                        <NumberTicker value={visitorCount} /> views
-                    </span>
-                </div>
-
                 <h1 className="text-4xl font-semibold">
                     Hi I'm Aryan -{" "}
-                    <span className="text-muted-foreground font-md">A Full Stack Developer.</span>
+                    <span className="text-muted-foreground font-medium">A Full Stack Developer.</span>
                 </h1>
                 <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base text-muted-foreground md:text-lg whitespace-pre-wrap leading-7">
                     I build interactive, responsive, and accessible web applications using
@@ -92,7 +77,7 @@ const HeroSection = () => {
                     <HeroButton text="React.js" icon={<ReactIcon />} />,{" "}
                     <HeroButton text="Next.js" icon={<NextJSIcon />} />, and{" "}
                     <HeroButton text="Node.js" icon={<NodeJSIcon />} />.
-                    <span>Focused on delivering seamless and intuitive user experiences.</span>
+                    <span>Specialized in taking MVPs from idea to launch.</span>
                 </div>
             </motion.div>
 

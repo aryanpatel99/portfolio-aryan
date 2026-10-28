@@ -11,7 +11,7 @@ import { projects } from "@/data/projectsData";
 const ProjectsSection = () => {
     const totalProjects = projects.length;
     return (
-    <ScrollReveal className="mt-8">
+    <ScrollReveal className="mt-20">
         <p className="text-muted-foreground text-sm opacity-50">Featured</p>
         <h2 className="text-2xl font-bold">Projects <span className="text-muted-foreground text-base font-normal">({totalProjects})</span></h2>
 

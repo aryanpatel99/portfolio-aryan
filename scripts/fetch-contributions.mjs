@@ -17,6 +17,9 @@ if (!token) {
 
 const USERNAME = "aryanpatel99";
 
+// Team project repos, not open source contributions
+const EXCLUDED_OWNERS = ["Abhayanthk", "Srijan76-code", "Arya756"];
+
 const QUERY = `{
   user(login: "${USERNAME}") {
     pullRequests(first: 50, states: MERGED, orderBy: {field: UPDATED_AT, direction: DESC}) {
@@ -57,7 +60,7 @@ async function run() {
   const prs = json.data?.user?.pullRequests?.nodes ?? [];
 
   const contributions = prs
-    .filter((pr) => pr.repository.owner.login !== USERNAME)
+    .filter((pr) => pr.repository.owner.login !== USERNAME && !EXCLUDED_OWNERS.includes(pr.repository.owner.login))
     .map((pr) => ({
       title: pr.title,
       description: `${pr.repository.owner.login}/${pr.repository.name}`,

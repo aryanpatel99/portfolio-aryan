@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react'
+import { Pill } from './kibo-ui/pill'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 import WorldIcon from './ui/world-icon'
 
@@ -57,7 +58,7 @@ const ExperienceCard = (
                 {/* skills */}
                 <div className='flex flex-wrap gap-2 mb-8'>
                     {skills.map((skill,index)=>(
-                        <div key={index} className='border border-border rounded-full px-2.5 py-1 text-xs font-medium hover:border-neutral-600 bg-secondary transition-colors '>{skill}</div>
+                        <Pill key={index}>{skill}</Pill>
                     ))}
                 </div>
 
@@ -65,7 +66,7 @@ const ExperienceCard = (
 
                 <div className='space-y-3'>
                         {points.length > 0 ? points.map((point, index) => (
-                            <div className='flex items-start gap-3'>
+                            <div key={index} className='flex items-start gap-3'>
                         <div className='w-1.5 h-1.5 rounded-full bg-muted-foreground mt-2 flex-shrink-0'></div>
                         <p className='text-sm text-muted-foreground leading-relaxed'>{point}</p>
                     </div>

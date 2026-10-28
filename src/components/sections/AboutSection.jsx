@@ -21,7 +21,7 @@ const AboutSection = () => {
                 <motion.img
                     src={cld("not_zenin", "w_720,h_720,c_fill")}
                     loading="lazy"
-                    className="size-60 border-2 border-secondary rounded-md object-cover"
+                    className="size-60 rounded-lg border border-border object-cover"
                     alt="Aryan Patel"
                     initial={{ opacity: 0, scale: 0.92 }}
                     whileInView={{ opacity: 1, scale: 1 }}

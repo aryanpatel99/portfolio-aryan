@@ -88,7 +88,7 @@
 .dark {
   /* dock's original dark shade (Tailwind neutral-900) */
   --primary-bg: oklch(0.205 0 0);
-  --background: oklch(0.18 0 0);
+  --background: #0d0d0d;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
