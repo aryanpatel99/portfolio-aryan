@@ -1,49 +1,41 @@
 [
   {
-    "title": "implement global command search and refine dashboard layout and navig…",
-    "description": "Abhayanthk/aegis",
-    "repository": "Abhayanthk",
-    "link": "https://github.com/Abhayanthk/aegis/pull/23",
+    "title": "fix(kube-stack): pass resourceAttributes to collector OTEL_RESOURCE_A…",
+    "description": "open-telemetry/opentelemetry-helm-charts",
+    "repository": "open-telemetry",
+    "link": "https://github.com/open-telemetry/opentelemetry-helm-charts/pull/2454",
     "date": "2026",
     "state": "merged"
   },
   {
-    "title": "feat: implement modular investigation stage UI system and human decis…",
-    "description": "Abhayanthk/aegis",
-    "repository": "Abhayanthk",
-    "link": "https://github.com/Abhayanthk/aegis/pull/21",
+    "title": "🌱 Update zizmor-action to v0.6.4 and fix findings",
+    "description": "metal3-io/ironic-standalone-operator",
+    "repository": "metal3-io",
+    "link": "https://github.com/metal3-io/ironic-standalone-operator/pull/865",
     "date": "2026",
     "state": "merged"
   },
   {
-    "title": "implemented stage progression tracking",
-    "description": "Abhayanthk/aegis",
-    "repository": "Abhayanthk",
-    "link": "https://github.com/Abhayanthk/aegis/pull/16",
+    "title": "Improve Guide for Running Windows Containers",
+    "description": "kubernetes/website",
+    "repository": "kubernetes",
+    "link": "https://github.com/kubernetes/website/pull/57585",
     "date": "2026",
     "state": "merged"
   },
   {
-    "title": " implemented investigation dashboard",
-    "description": "Abhayanthk/aegis",
-    "repository": "Abhayanthk",
-    "link": "https://github.com/Abhayanthk/aegis/pull/10",
+    "title": "🌱 Fix zizmor self-repository findings and bump zizmor-action to v0.6.3",
+    "description": "metal3-io/baremetal-operator",
+    "repository": "metal3-io",
+    "link": "https://github.com/metal3-io/baremetal-operator/pull/3638",
     "date": "2026",
     "state": "merged"
   },
   {
-    "title": "Frontend",
-    "description": "Abhayanthk/aegis",
-    "repository": "Abhayanthk",
-    "link": "https://github.com/Abhayanthk/aegis/pull/6",
-    "date": "2026",
-    "state": "merged"
-  },
-  {
-    "title": "Created frontend strucutre",
-    "description": "Abhayanthk/aegis",
-    "repository": "Abhayanthk",
-    "link": "https://github.com/Abhayanthk/aegis/pull/3",
+    "title": "🌱 Update workflows to fix new zizmor findings",
+    "description": "metal3-io/ip-address-manager",
+    "repository": "metal3-io",
+    "link": "https://github.com/metal3-io/ip-address-manager/pull/1627",
     "date": "2026",
     "state": "merged"
   },
@@ -52,22 +44,6 @@
     "description": "Ashutoshx7/VengeanceUI",
     "repository": "Ashutoshx7",
     "link": "https://github.com/Ashutoshx7/VengeanceUI/pull/56",
-    "date": "2026",
-    "state": "merged"
-  },
-  {
-    "title": "Add new Tableau workbook for Blinkit Analysis G19",
-    "description": "Arya756/SecC_G19_BlinkitDataAnalysis",
-    "repository": "Arya756",
-    "link": "https://github.com/Arya756/SecC_G19_BlinkitDataAnalysis/pull/3",
-    "date": "2026",
-    "state": "merged"
-  },
-  {
-    "title": "Add data cleaning notebook and cleaned dataset",
-    "description": "Arya756/SecC_G19_BlinkitDataAnalysis",
-    "repository": "Arya756",
-    "link": "https://github.com/Arya756/SecC_G19_BlinkitDataAnalysis/pull/2",
     "date": "2026",
     "state": "merged"
   },

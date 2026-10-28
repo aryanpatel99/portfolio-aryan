@@ -3,6 +3,7 @@
 import React from 'react'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 import WorldIcon from './ui/world-icon'
+import { Pill } from './kibo-ui/pill'
 
 const Card = ({
     title,
@@ -44,7 +45,7 @@ const Card = ({
                     </p>
                     <div className='flex flex-wrap gap-1.5'>
                         {techStack.map((stack, index) => (
-                            <span key={index} className='px-2 py-1 text-xs  bg-secondary border border-border rounded-full hover:bg-primary/20 transition-all duration-200 text-secondary-foreground'>{stack}</span>
+                            <Pill key={index}>{stack}</Pill>
                         ))}
                     </div>
                 </div>

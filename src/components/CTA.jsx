@@ -15,7 +15,7 @@ const CTA = () => {
         })();
     }, [])
     return (
-        <div className="relative mt-20 overflow-hidden border border-secondary rounded-md py-8 drop-shadow-xs">
+        <div className="relative mt-20 overflow-hidden rounded-lg border border-border bg-card py-8">
             <div className="pointer-events-none absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
                 <FlickeringGrid
                     className="h-full w-full"

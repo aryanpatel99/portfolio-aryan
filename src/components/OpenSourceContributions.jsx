@@ -1,44 +1,25 @@
 "use client";
 
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from "lucide-react";
-import staticContributions from "../data/contributions.json";
+import { Pill, PillIcon } from "./kibo-ui/pill";
 
-const OpenSourceContributions = () => {
+const OpenSourceContributions = ({ contributions }) => {
     const [showAll, setShowAll] = useState(false)
-    const [contributions, setContributions] = useState(staticContributions)
-
-    useEffect(() => {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 4000);
-
-        fetch(`/api/github-contributions`, { signal: controller.signal })
-            .then(r => r.ok ? r.json() : null)
-            .then(data => {
-                if (data?.success && data.contributions.length > 0) {
-                    setContributions(data.contributions);
-                }
-            })
-            .catch(() => {})
-            .finally(() => clearTimeout(timeout));
-
-        return () => { controller.abort(); clearTimeout(timeout); };
-    }, [])
-
 
     const displayed = showAll ? contributions : contributions.slice(0, 3)
 
     return (
-        // <div className="p-6 rounded-lg mt-20 ">
-        <div className="p-6 rounded-lg mt-20 border border-secondary  drop-shadow-xs   ">
+        <div className="mt-20 rounded-lg border border-border bg-card p-6">
 
-            <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold">Open Source Contributions</h2>
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-secondary text-muted-foreground border border-border/50">
+            <div className="flex items-center justify-between gap-4 mb-4">
+                <h2 className="text-2xl font-bold">Open Source Contributions</h2>
+                <Pill className="shrink-0">
+                    <PillIcon icon={GitMerge} />
                     {contributions.length} merged PRs
-                </span>
+                </Pill>
             </div>
 
             <div className="space-y-4">
@@ -49,7 +30,7 @@ const OpenSourceContributions = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-30px" }}
                             transition={{ delay: i * 0.08, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                            className="flex justify-between border-b border-zinc-700 pb-3"
+                            className="flex justify-between border-b border-border pb-3"
                         >
                             <div>
                                 <div className="flex items-center gap-2">
@@ -57,10 +38,10 @@ const OpenSourceContributions = () => {
                                         <GitMerge size={16} className="text-purple-400" />
                                     )}
                                     <h4 className="font-medium">{c.title}</h4>
-                                    <span className="text-xs text-zinc-400">{c.date}</span>
+                                    <span className="text-xs text-muted-foreground">{c.date}</span>
                                 </div>
 
-                                <p className="text-sm text-zinc-400">{c.description}</p>
+                                <p className="text-sm text-muted-foreground">{c.description}</p>
                             </div>
 
                             <a
