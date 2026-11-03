@@ -22,10 +22,13 @@ const EXCLUDED_OWNERS = ["Abhayanthk", "Srijan76-code", "Arya756"];
 
 const QUERY = `{
   user(login: "${USERNAME}") {
-    pullRequests(first: 50, states: MERGED, orderBy: {field: UPDATED_AT, direction: DESC}) {
+    pullRequests(first: 100, states: [OPEN, MERGED], orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
         title
         url
+        state
+        isDraft
+        createdAt
         mergedAt
         repository {
           owner { login }
@@ -60,15 +63,17 @@ async function run() {
   const prs = json.data?.user?.pullRequests?.nodes ?? [];
 
   const contributions = prs
-    .filter((pr) => pr.repository.owner.login !== USERNAME && !EXCLUDED_OWNERS.includes(pr.repository.owner.login))
+    .filter((pr) => !pr.isDraft && pr.repository.owner.login !== USERNAME && !EXCLUDED_OWNERS.includes(pr.repository.owner.login))
     .map((pr) => ({
       title: pr.title,
       description: `${pr.repository.owner.login}/${pr.repository.name}`,
       repository: pr.repository.owner.login,
       link: pr.url,
-      date: new Date(pr.mergedAt).getFullYear().toString(),
-      state: "merged",
-    }));
+      date: new Date(pr.mergedAt ?? pr.createdAt).getFullYear().toString(),
+      state: pr.state.toLowerCase(),
+    }))
+    // Merged first; sort is stable, so each group keeps most-recently-updated order
+    .sort((a, b) => (a.state === "merged" ? 0 : 1) - (b.state === "merged" ? 0 : 1));
 
   writeFileSync(OUT, JSON.stringify(contributions, null, 2));
   console.log(`✓ ${contributions.length} contributions written to src/data/contributions.json`);

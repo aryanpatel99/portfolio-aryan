@@ -62,5 +62,21 @@
     "link": "https://github.com/firstcontributions/first-contributions/pull/110348",
     "date": "2026",
     "state": "merged"
+  },
+  {
+    "title": "🌱 Set controller-runtime logger on all Ginkgo nodes in e2e",
+    "description": "metal3-io/ip-address-manager",
+    "repository": "metal3-io",
+    "link": "https://github.com/metal3-io/ip-address-manager/pull/1691",
+    "date": "2026",
+    "state": "open"
+  },
+  {
+    "title": "fix(docs): redirect docs root to latest released version",
+    "description": "Apicurio/apicurio-registry",
+    "repository": "Apicurio",
+    "link": "https://github.com/Apicurio/apicurio-registry/pull/10681",
+    "date": "2026",
+    "state": "open"
   }
 ]
