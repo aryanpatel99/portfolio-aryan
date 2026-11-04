@@ -1,0 +1,31 @@
+src/components/sections/GitHubActivitySection.jsx
+  s_3cb98926d3cf4e::t_9d301806414ad2 14-16
+src/components/ui/flickering-grid.jsx
+  s_3cb98926d3cf4e::t_b7fa84567270d3 75-77
+src/lib/redis.js
+  s_3cb98926d3cf4e::t_08b6325984c933 27-29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d41b23bff746ac616a59311a14271db6a1d062c1",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_3cb98926d3cf4e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1ac44294-2415-4ac2-8c40-eda33d8f8b9f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
