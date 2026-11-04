@@ -36,7 +36,7 @@ export const metadata = {
       "Aryan Patel's portfolio - full-stack and AI projects, open source contributions, and real-world systems.",
     images: [
       {
-        url: "https://res.cloudinary.com/dqlhyupyr/image/upload/w_1200,h_630,c_fill/v1781869657/portfolio.png",
+        url: "https://res.cloudinary.com/dqlhyupyr/image/upload/w_1200,h_630,c_fill/portfolio.png",
         width: 1200,
         height: 630,
         type: "image/png",
@@ -50,7 +50,7 @@ export const metadata = {
     description:
       "Aryan Patel's portfolio — full-stack and AI projects, open source contributions, and real-world systems.",
     images: [
-      "https://res.cloudinary.com/dqlhyupyr/image/upload/w_1200,h_630,c_fill/v1781869657/portfolio.png",
+      "https://res.cloudinary.com/dqlhyupyr/image/upload/w_1200,h_630,c_fill/portfolio.png",
     ],
   },
   icons: {
