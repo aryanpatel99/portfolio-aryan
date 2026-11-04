@@ -11,6 +11,10 @@ const calendarTheme = {
     light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
 };
 
+// One shared formatter: calling toLocaleDateString with options for every day of the year
+// rebuilds the formatter 365 times and freezes the page for seconds while it loads
+const tooltipDate = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric" });
+
 const GitHubActivitySection = ({ contributions, calendar }) => {
     const resolvedTheme = useResolvedTheme();
     const year = new Date().getFullYear();
@@ -21,11 +25,7 @@ const GitHubActivitySection = ({ contributions, calendar }) => {
         tooltips: {
             activity: {
                 text: (activity) => {
-                    const date = new Date(activity.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                    });
+                    const date = tooltipDate.format(new Date(activity.date));
                     return `${activity.count} contribution${activity.count !== 1 ? "s" : ""} on ${date}`;
                 },
                 placement: "top",

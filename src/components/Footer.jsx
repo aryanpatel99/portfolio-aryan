@@ -4,8 +4,8 @@ import React from "react";
 import { useVisitorCount } from "@/hooks/useVisitorCount";
 import NumberTicker from "@/components/ui/number-ticker";
 
-const Footer = () => {
-  const { count } = useVisitorCount();
+const Footer = ({ initialCount }) => {
+  const { count } = useVisitorCount(initialCount);
 
   return (
     <footer id="site-footer" className="border-t border-border mt-8 py-6">

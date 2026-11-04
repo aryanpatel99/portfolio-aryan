@@ -72,9 +72,12 @@ export const FlickeringGrid = ({
       if (typeof window === "undefined") {
         return `rgba(0, 0, 0,`
       }
+      // Plain rgb()/rgba() values don't need the canvas round-trip (getImageData is slow)
+      const rgb = colorValue.match(/^rgba?\(\s*(\d+)[\s,]+(\d+)[\s,]+(\d+)/)
+      if (rgb) return `rgba(${rgb[1]}, ${rgb[2]}, ${rgb[3]},`
       const canvas = document.createElement("canvas")
       canvas.width = canvas.height = 1
-      const ctx = canvas.getContext("2d")
+      const ctx = canvas.getContext("2d", { willReadFrequently: true })
       if (!ctx) return "rgba(255, 0, 0,"
       ctx.fillStyle = colorValue
       ctx.fillRect(0, 0, 1, 1)

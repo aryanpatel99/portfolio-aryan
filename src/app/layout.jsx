@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import FloatingDockDemo from "@/components/floating-dock-demo";
 import SmoothScroll from "@/components/SmoothScroll";
 import { Analytics } from "@vercel/analytics/react";
+import { getCachedVisitorCount } from "@/lib/redis";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -53,21 +54,26 @@ export const metadata = {
       "https://res.cloudinary.com/dqlhyupyr/image/upload/w_1200,h_630,c_fill/portfolio.png",
     ],
   },
-  icons: {
-    icon: "/logo-a.png",
-  },
 };
 
-export default function RootLayout({ children }) {
+const THEME_SCRIPT = `(function(){var d=document.documentElement;try{var t=localStorage.getItem("vite-ui-theme")||"dark";if(t==="system")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.classList.add(t)}catch(e){d.classList.add("dark")}})()`;
+
+export default async function RootLayout({ children }) {
+  const initialVisitorCount = await getCachedVisitorCount();
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Sets the theme class before the page paints, so there's no light/dark flash */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className={`${hankenGrotesk.variable} font-sans`}>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
           <SmoothScroll>
             <div className="bg-background text-foreground min-h-screen">
               <Navbar />
               {children}
-              <Footer />
+              <Footer initialCount={initialVisitorCount} />
               <FloatingDockDemo />
             </div>
             <Analytics />
