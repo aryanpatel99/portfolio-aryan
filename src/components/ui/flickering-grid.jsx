@@ -72,8 +72,9 @@ export const FlickeringGrid = ({
       if (typeof window === "undefined") {
         return `rgba(0, 0, 0,`
       }
-      // Plain rgb()/rgba() values don't need the canvas round-trip (getImageData is slow)
-      const rgb = colorValue.match(/^rgba?\(\s*(\d+)[\s,]+(\d+)[\s,]+(\d+)/)
+      // Integer rgb()/rgba() values don't need the canvas round-trip (getImageData is slow).
+      // Decimals or percentages don't match and fall through to the canvas.
+      const rgb = colorValue.match(/^rgba?\(\s*(\d+)[\s,]+(\d+)[\s,]+(\d+)\s*[,)/]/)
       if (rgb) return `rgba(${rgb[1]}, ${rgb[2]}, ${rgb[3]},`
       const canvas = document.createElement("canvas")
       canvas.width = canvas.height = 1

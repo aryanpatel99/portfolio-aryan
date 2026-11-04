@@ -11,8 +11,9 @@ const calendarTheme = {
     light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
 };
 
-// One shared formatter: calling toLocaleDateString with options for every day of the year
-// rebuilds the formatter 365 times and freezes the page for seconds while it loads
+// react-activity-calendar calls tooltips.activity.text() for every day block when it renders
+// (not on hover), so it runs ~365 times during page load. One shared formatter avoids
+// toLocaleDateString building a new Intl formatter on each call, which froze the page for seconds.
 const tooltipDate = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric" });
 
 const GitHubActivitySection = ({ contributions, calendar }) => {

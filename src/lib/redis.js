@@ -24,7 +24,9 @@ export async function redis(path, fetchOptions = { cache: "no-store" }) {
 export async function getCachedVisitorCount() {
   try {
     const count = await redis(`/get/${VISITOR_COUNT_KEY}`, { method: "GET", next: { revalidate: 60 } });
-    return count !== null ? parseInt(count, 10) : null;
+    const parsed = parseInt(count, 10);
+    // Non-numeric or missing value: return null so the footer falls back to the client fetch
+    return Number.isNaN(parsed) ? null : parsed;
   } catch (error) {
     console.error("Visitor count read error:", error.message);
     return null;
