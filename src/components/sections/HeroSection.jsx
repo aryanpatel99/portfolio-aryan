@@ -84,7 +84,7 @@ const HeroSection = () => {
             <motion.div className="relative inline-block shrink-0" variants={heroChild}>
                 <img
                     loading="lazy"
-                    className="size-28 rounded-full border-3 border-border object-cover md:size-36"
+                    className="size-28 rounded-2xl border-3 border-border object-cover md:size-36"
                     src={cld("not_zenin", "w_320,h_320,c_fill")}
                     alt="Aryan Patel"
                 />
