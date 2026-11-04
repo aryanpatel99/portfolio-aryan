@@ -215,11 +215,11 @@ export const experiences = [
     location: "Remote",
     skills: ["Manual Testing", "Next.js", "Excel"],
     points: [
-      "Collaborated with the development team to identify, document, and resolve multiple bugs, leading to a smoother and more reliable user experience.",
-      "Conducted functional and UI/UX testing, providing actionable feedback that enhanced product performance.",
-      "Worked closely with mentors and senior developers to understand workflows, debug issues, and suggest improvements.",
-      "Improved product usability by identifying and reporting edge cases during testing.",
+      "Reported 20+ bugs on CredoHire's AI hiring platform, including server errors and broken user workflows.",
+      "Audited 100+ AI chats, catching incorrect LLM responses, missing user data, and faulty CV parsing.",
+      "Maintained a shared bug log for the team, escalating critical user-facing UI issues to engineers immediately.",
     ],
+    certificate: "https://tinyurl.com/yywh9d7x",
   },
   // {
   //   id: "codeium",

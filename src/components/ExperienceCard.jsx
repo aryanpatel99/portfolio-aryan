@@ -4,6 +4,7 @@ import React from 'react'
 import { Pill } from './kibo-ui/pill'
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 import WorldIcon from './ui/world-icon'
+import { ArrowUpRight } from 'lucide-react'
 
 const ExperienceCard = (
     {
@@ -15,6 +16,7 @@ const ExperienceCard = (
   location,
   skills = [],
   points = [],
+  certificate,
 }
 ) => {
     return (
@@ -75,6 +77,18 @@ const ExperienceCard = (
                         )}
 
                 </div>
+
+                {certificate && (
+                    <a
+                        href={certificate}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='mt-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors'
+                    >
+                        Internship Certificate
+                        <ArrowUpRight size={14} aria-hidden='true' />
+                    </a>
+                )}
             </div>
         </>
     )

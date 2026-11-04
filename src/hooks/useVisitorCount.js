@@ -5,22 +5,18 @@ import { useState, useEffect } from "react";
 let cachedCount = null;
 let fetchPromise = null;
 
-export function useVisitorCount() {
-  const [count, setCount] = useState(() => {
-    if (cachedCount !== null) return cachedCount;
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("portfolio_visitor_count_cache");
-      if (stored) {
-        const parsed = parseInt(stored, 10);
-        if (!isNaN(parsed)) return parsed;
-      }
-    }
-    return null;
-  });
-  const [isLoading, setIsLoading] = useState(!count);
+// initialCount comes with the page HTML (at most a minute old), so the number shows immediately
+export function useVisitorCount(initialCount = null) {
+  // Starts from values the server also has, so hydration matches
+  const [count, setCount] = useState(() => cachedCount ?? initialCount);
+  const [isLoading, setIsLoading] = useState(count === null);
 
   useEffect(() => {
     let isMounted = true;
+
+    // No server count: fall back to the last count this browser saw
+    const stored = parseInt(localStorage.getItem("portfolio_visitor_count_cache") ?? "", 10);
+    if (!isNaN(stored)) setCount((current) => current ?? stored);
 
     if (!fetchPromise) {
       const controller = new AbortController();
