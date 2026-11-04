@@ -1,0 +1,31 @@
+src/components/OpenSourceContributions.jsx
+  s_3cb98926d3cf4e::t_0a03810d85ef70 15-29,33
+  s_3cb98926d3cf4e::t_8f26de3a557f91 134-135
+  s_3cb98926d3cf4e::t_b12e7137187ebd 56-57,60-73
+  s_3cb98926d3cf4e::t_7a2689711d833a 4
+  s_3cb98926d3cf4e::t_19bcd4caab95d8 79-85
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f29780fb19f303243f6c3b545d85e6c42a0f9a64",
+  "prompts": {},
+  "humans": {
+    "h_ccbfe03d15f891": {
+      "author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    },
+    "h_e67cc62ab13a2f": {
+      "author": "Aryan Patel"
+    }
+  },
+  "sessions": {
+    "s_3cb98926d3cf4e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1ac44294-2415-4ac2-8c40-eda33d8f8b9f",
+        "model": "unknown"
+      },
+      "human_author": "Aryan Patel <aryanpatel6215@gmail.com>"
+    }
+  }
+}
