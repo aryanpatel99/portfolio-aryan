@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio-aryan-delta.vercel.app"><img src="https://img.shields.io/badge/View_Portfolio-0D0D0D?style=for-the-badge&logo=vercel&logoColor=white" alt="View Portfolio" /></a>
-  <a href="https://cal.com/aryan-patel-wv5rcz/30min"><img src="https://img.shields.io/badge/Book_a_Free_Call-0D0D0D?style=for-the-badge&logo=googlecalendar&logoColor=white" alt="Book a Free Call" /></a>
-  <a href="mailto:aryanpatel6215@gmail.com"><img src="https://img.shields.io/badge/Email_Me-0D0D0D?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Me" /></a>
+  <a href="https://portfolio-aryan-delta.vercel.app"><img src=".github/readme/view-portfolio.svg" alt="View Portfolio" /></a>
+  <a href="https://cal.com/aryan-patel-wv5rcz/30min"><img src=".github/readme/book-a-call.svg" alt="Book a Free Call" /></a>
+  <a href="mailto:aryanpatel6215@gmail.com"><img src=".github/readme/email-me.svg" alt="Email Me" /></a>
 </p>
 
 ---
