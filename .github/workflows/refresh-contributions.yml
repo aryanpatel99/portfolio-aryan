@@ -1,0 +1,46 @@
+# Keeps the open source PR list on the portfolio fresh.
+# PRs live in other people's repos (no webhooks possible), so this clears the cached
+# GitHub data on a schedule and then loads the homepage once, so visitors get the
+# rebuilt page on their first load.
+#
+# Needs the repo secret REVALIDATION_SECRET (same value as in Vercel).
+
+name: Refresh contributions
+
+on:
+  schedule:
+    - cron: "*/15 * * * *" # every 15 minutes (GitHub may run it a bit later when busy)
+  workflow_dispatch: # allows a manual run from the Actions tab
+
+permissions: {}
+
+concurrency:
+  group: refresh-contributions
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    env:
+      SITE_URL: https://portfolio-aryan-delta.vercel.app
+    steps:
+      - name: Clear cached GitHub data
+        env:
+          REVALIDATION_SECRET: ${{ secrets.REVALIDATION_SECRET }}
+        run: |
+          if [ -z "$REVALIDATION_SECRET" ]; then
+            echo "::error::REVALIDATION_SECRET is not set in the repo's Actions secrets"
+            exit 1
+          fi
+          curl --fail-with-body --silent --show-error --max-time 30 \
+            -X POST "$SITE_URL/api/revalidate-contributions" \
+            -H "Authorization: Bearer $REVALIDATION_SECRET"
+
+      - name: Rebuild the homepage before visitors arrive
+        run: |
+          # First request triggers the rebuild; the second one checks the fresh page is served
+          curl --fail --silent --show-error --max-time 30 -o /dev/null "$SITE_URL/"
+          sleep 10
+          curl --fail --silent --show-error --max-time 30 -o /dev/null \
+            -w "Homepage: HTTP %{http_code} in %{time_total}s\n" "$SITE_URL/"
